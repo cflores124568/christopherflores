@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Christopher Flores</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/871fa37df6.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Intel+One+Mono:ital,wght@0,300...700;1,300...700&family=Miniver&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="/" class="logo">
+                    <img src="images/CF-monogram-from-MakeMonogram.com-1758503108.svg" alt="Christopher Flores Logo" class="logo-image">
+                </a>
+            </div>
+            <div class="navbar-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="#home" class="navbar-link">Home</a></li>
+                <li class="navbar-item"><a href="#projects" class="navbar-link">Projects</a></li>
+                <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h4 id="greeting">Hi, my name is</h4>
+            <h1 id="name">Christopher Flores</h1>
+            <h3 id="title">Software Engineer</h3>
+            <a href="#projects" class="cta-button" aria-label="View Christopher's projects">
+                View My Projects
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/cflores124568" target="_blank" class="social-icon">
+                    <i class="fa-brands fa-github-alt"></i>
+                </a>
+                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank" class="social-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <!-- Pocket Trainer Project -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <div class="project-type-label mobile">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        Mobile App
+                    </div>
+                    
+                    <div class="project-images mobile-app" data-project="pocket-trainer">
+                        <div class="image-slider">
+                            <img src="images/PocketTrainer.png" class="project-image active" alt="Pocket Trainer Login Screen">
+                            <img src="images/PocketTrainer_ExerciseDetails.png" class="project-image" alt="Exercise Details Screen">
+                            <img src="images/PocketTrainer_NutritionPlan.png" class="project-image" alt="Nutrition Planning Screen">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-button prev" onclick="changeSlide('pocket-trainer', -1)">❮</button>
+                            <button class="slider-button next" onclick="changeSlide('pocket-trainer', 1)">❯</button>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="currentSlide('pocket-trainer', 1)"></span>
+                            <span class="dot" onclick="currentSlide('pocket-trainer', 2)"></span>
+                            <span class="dot" onclick="currentSlide('pocket-trainer', 3)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h3>Pocket Trainer</h3>
+                    <p>A comprehensive fitness and nutrition app where users can create personalized workout and nutrition plans based on their specific goals and preferences.</p>
+                    <p>Features an interactive SVG muscle diagram allowing users to explore and select exercises targeting specific muscle groups.</p>
+                    <div class="tech-stack">
+                        <span class="tech">
+                            <img src="images/react.svg" class="tech-logo" alt="React">
+                            React Native
+                        </span>
+                        <span class="tech">
+                            <img src="images/firebase.svg" class="tech-logo" alt="Firebase">
+                            Firebase
+                        </span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/cflores124568/pocket-trainer" target="_blank" class="project-link">
+                            <i class="fa-brands fa-github"></i>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TruLuxe Electric Website Project -->
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>TruLuxe Electric Website</h3>
+                    <p>A website I designed for TruLuxe Electric, my friend's company.</p>
+                    <div class="tech-stack">
+                        <span class="tech">
+                            <img src="images/nextjs-icon-light-background.svg" class="tech-logo" alt="Next.js">
+                            Next.js
+                        </span>
+                        <span class="tech">
+                            <img src="images/tailwindcss.svg" class="tech-logo" alt="Tailwind CSS">
+                            Tailwind CSS
+                        </span>
+                    </div>
+                </div>
+
+                <div class="project-visual">
+                    <div class="project-type-label website">
+                        <i class="fa-solid fa-computer-mouse"></i>
+                        Website
+                    </div>
+                    <div class="project-images website" data-project="truluxe-electric">
+                        <div class="image-slider">
+                            <img src="images/TruLuxeElectric_1.png" class="project-image active" alt="TruLuxe Electric Homepage">
+                            <img src="images/TruLuxeElectric_2.png" class="project-image">
+                            <img src="images/TruLuxeElectric_3.png" class="project-image">
+                            <img src="images/TruLuxeElectric_4.png" class="project-image">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-button prev" onclick="changeSlide('truluxe-electric', -1)">❮</button>
+                            <button class="slider-button next" onclick="changeSlide('truluxe-electric', 1)">❯</button>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="currentSlide('truluxe-electric', 1)"></span>
+                            <span class="dot" onclick="currentSlide('truluxe-electric', 2)"></span>
+                            <span class="dot" onclick="currentSlide('truluxe-electric', 3)"></span>
+                            <span class="dot" onclick="currentSlide('truluxe-electric', 4)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="card-content">
+                    <h3>Soccer Analysis</h3>
+                    <p>Coming soon - More innovative solutions on the way</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get in touch with Christopher</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <a href="mailto:chrisefff@gmail.com">
+                    <h3>Email</h3>
+                    <i class="fa-solid fa-envelope fa-2xl"></i>
+                </a>
+            </div>
+            <div class="contact-card">
+                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank">
+                    <h3>Linkedin</h3>
+                    <i class="fa-brands fa-linkedin fa-2xl"></i>
+                </a>
+            </div>
+            <div class="contact-card">
+                <a href="https://github.com/cflores124568" target="_blank">
+                    <h3>Github</h3>
+                    <i class="fa-brands fa-github fa-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>&copy; Copyright 2025. All rights reserved.</h3>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Object to track slide indices for each project
+        const projectSlideIndices = {};
+
+        function changeSlide(projectId, n) {
+            if (!projectSlideIndices[projectId]) {
+                projectSlideIndices[projectId] = 1;
+            }
+            showSlide(projectId, projectSlideIndices[projectId] += n);
+        }
+
+        function currentSlide(projectId, n) {
+            showSlide(projectId, projectSlideIndices[projectId] = n);
+        }
+
+        function showSlide(projectId, n) {
+            const projectContainer = document.querySelector(`[data-project="${projectId}"]`);
+            if (!projectContainer) return;
+
+            const slides = projectContainer.querySelectorAll('.project-image');
+            const dots = projectContainer.querySelectorAll('.dot');
+            
+            if (!projectSlideIndices[projectId]) {
+                projectSlideIndices[projectId] = 1;
+            }
+
+            if (n > slides.length) {
+                projectSlideIndices[projectId] = 1;
+            }
+            if (n < 1) {
+                projectSlideIndices[projectId] = slides.length;
+            }
+
+            // Remove active class from all slides and dots in this project
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Add active class to current slide and dot in this project
+            const currentIndex = projectSlideIndices[projectId] - 1;
+            if (slides[currentIndex]) slides[currentIndex].classList.add('active');
+            if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+        }
+
+        // Initialize all projects on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const projects = document.querySelectorAll('[data-project]');
+            projects.forEach(project => {
+                const projectId = project.getAttribute('data-project');
+                projectSlideIndices[projectId] = 1;
+            });
+        });
+    </script>
+</body>
+</html>
