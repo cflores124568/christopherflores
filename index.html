@@ -12,6 +12,7 @@
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <div class="dot-grid-container" id="dotGrid"></div>
         <nav class="navbar">
             <div class="navbar-brand">
                 <a href="/" class="logo">
@@ -213,6 +214,56 @@
 
     <!-- JavaScript -->
     <script>
+        //Animated dot grid for hero section
+        const container = document.getElementById('dotGrid');
+        const dots = [];
+        const dotData = [];
+        const containerRect = container.getBoundingClientRect();
+        const cols = Math.floor(containerRect.width/35);
+        const rows = Math.floor(containerRect.height/35);
+
+        for(let i = 0; i < rows*cols; ++i){
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            container.appendChild(dot);
+            dots.push(dot);
+
+            const row = Math.floor(i/cols);
+            const col = i % cols;
+            dotData.push({row, col, element: dot});
+        }
+
+        let mouseX = -1000;
+        let mouseY = -1000;
+
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            mouseX = -1000;
+            mouseY = -1000;
+        });
+        function updateDots(){
+            dotData.forEach((data) => {
+                const spacing = containerRect.width/cols;
+                const dotX = data.col * spacing + spacing / 2;
+                const dotY = data.row * spacing + spacing / 2;
+                const distance = Math.sqrt(((mouseX-dotX)**2) + ((mouseY-dotY) **2));
+
+                if(distance < 120){
+                    data.element.classList.add('bright');
+                }
+                else{
+                    data.element.classList.remove('bright');
+                }
+            });
+        }
+        setInterval(updateDots, 10);
+    </script>
+    <script>
         //Object to track slide indices for each project
         const projectSlideIndices = {};
 
@@ -269,5 +320,6 @@
             });
         });
     </script>
+
 </body>
 </html>

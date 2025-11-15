@@ -71,6 +71,37 @@ body::before {
     to {width: 17ch;}
 }
 
+/* Dot grid background */
+.dot-grid-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind navbar and hero content */
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 35px);
+  grid-template-rows: repeat(auto-fill, 35px);
+  gap: 0;
+  justify-content: center;
+  align-content: center;
+}
+
+.dot-grid-container .dot{
+  width: 0.5px;
+  height: 0.5px;
+  background: rgba(142, 139, 139, 0.4);
+  border-radius: 50%;
+  transition: all 0.2s ease-out;
+  margin: auto;
+}
+
+.dot-grid-container .dot.bright {
+  background: rgba(237, 235, 235, 0.9);
+  box-shadow: 0 0 10px rgba(20, 18, 18, 0.9);
+  transform: scale(2);
+}
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -147,6 +178,8 @@ html{
 }
 
 .hero-content{
+    position: relative;
+    z-index: 1;
     max-width: 700px;
     animation: fadeIn 1s ease-in;
 }
