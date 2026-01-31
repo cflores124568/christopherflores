@@ -50,6 +50,60 @@
     <section id="projects">
         <h2>My Projects</h2>
         <div class="projects-grid">
+            <!--ElectriTrack-->
+            <div class="project-card">
+                <div class="project-visual">
+                    <div class="project-type-label web-app">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        Web App
+                    </div>
+                    <div class="project-images web-app" data-project="electritrack">
+                        <div class="image-slider">
+                            <img src="images/ElectriTrackLanding.png" class="project-image active" alt="ElectriTrack Landing Page">
+                            <img src="images/ElectriTrack_Analytics.png" class="project-image" alt="ElectriTrack Analytics Page">
+                            <img src="images/ElectriTrack_DeviceManagement.png" class="project-image" alt="ElectriTrack Device Management Page">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-button prev" onclick="changeSlide('electritrack', -1)">❮</button>
+                            <button class="slider-button next" onclick="changeSlide('electritrack', 1)">❯</button>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" onClick="currentSlide('electritrack', 1)"></span>
+                            <span class="dot" onClick="currentSlide('electritrack', 2)"></span>
+                            <span class="dot" onClick="currentSlide('electritrack', 3)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>ElectriTrack</h3>
+                    <p>A job tracking and management system for electricians to streamline workflow, track job progress, and manage client information</p>
+                    <div class="tech-stack">
+                        <span class="tech">
+                            <img src="images/nextjs-icon-light-background.svg" class="tech-logo" alt="Next.js">
+                            Next.js
+                        </span>
+                        <span class="tech">
+                            <img src="images/tailwindcss.svg" class="tech-logo" alt="Tailwind CSS">
+                            Tailwind CSS
+                        </span>
+                        <span class="tech">
+                            <img src="images/firebase.svg" class="tech-logo" alt="Firebase">
+                            Firebase
+                        </span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/cflores124568/electritrack" target="_blank" class="project-link">
+                            <i class="fa-brands fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="https://electritrack.vercel.app" target="_blank" class="project-link">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                            View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Pocket Trainer Project -->
             <div class="project-card">
                 <div class="project-visual">
@@ -110,6 +164,7 @@
                             <img src="images/TruLuxeElectric_2.png" class="project-image" alt="TruLuxe Electric Page 2">
                             <img src="images/TruLuxeElectric_3.png" class="project-image" alt="TruLuxe Electric Page 3">
                             <img src="images/TruLuxeElectric_4.png" class="project-image" alt="TruLuxe Electric Page 4">
+                            <img src="images/TruLuxeResidential.png" class="project-image" alt="TruLuxe Residential Services Section">
                         </div>
                         <div class="slider-controls">
                             <button class="slider-button prev" onclick="changeSlide('truluxe-electric', -1)">❮</button>
@@ -120,6 +175,7 @@
                             <span class="dot" onclick="currentSlide('truluxe-electric', 2)"></span>
                             <span class="dot" onclick="currentSlide('truluxe-electric', 3)"></span>
                             <span class="dot" onclick="currentSlide('truluxe-electric', 4)"></span>
+                            <span class="dot" onclick="currentSlide('truluxe-electric', 5)"></span>
                         </div>
                     </div>
                 </div>
@@ -269,6 +325,7 @@
         }
         setInterval(updateDots, 10);
     </script>
+    <script src="animations.js"></script>
     <script>
         //Object to track slide indices for each project
         const projectSlideIndices = {};
