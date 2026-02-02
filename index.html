@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Intel+One+Mono:ital,wght@0,300...700;1,300...700&family=Miniver&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section -->
     <section class="hero">
         <div class="dot-grid-container" id="dotGrid"></div>
         <nav class="navbar">
@@ -46,11 +45,10 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
         <div class="projects-grid">
-            <!--ElectriTrack-->
+
             <div class="project-card">
                 <div class="project-visual">
                     <div class="project-type-label web-app">
@@ -60,17 +58,19 @@
                     <div class="project-images web-app" data-project="electritrack">
                         <div class="image-slider">
                             <img src="images/ElectriTrackLanding.png" class="project-image active" alt="ElectriTrack Landing Page">
-                            <img src="images/ElectriTrack_Analytics.png" class="project-image" alt="ElectriTrack Analytics Page">
-                            <img src="images/ElectriTrack_DeviceManagement.png" class="project-image" alt="ElectriTrack Device Management Page">
+                            <img src="images/ElectriTrackRevenueChart.png" class="project-image" alt="ElectriTrack Revenue Overview">
+                            <img src="images/ElectriTrackCustomers.png" class="project-image" alt="ElectriTrack Customer Management Page">
+                            <img src="images/ElectriTrackJobs.png" class="project-image" alt="ElectriTrack Jobs Page">
                         </div>
                         <div class="slider-controls">
-                            <button class="slider-button prev" onclick="changeSlide('electritrack', -1)">❮</button>
-                            <button class="slider-button next" onclick="changeSlide('electritrack', 1)">❯</button>
+                            <button class="slider-button prev">❮</button>
+                            <button class="slider-button next">❯</button>
                         </div>
                         <div class="slider-dots">
-                            <span class="dot active" onClick="currentSlide('electritrack', 1)"></span>
-                            <span class="dot" onClick="currentSlide('electritrack', 2)"></span>
-                            <span class="dot" onClick="currentSlide('electritrack', 3)"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
                     </div>
                 </div>
@@ -78,6 +78,10 @@
                     <h3>ElectriTrack</h3>
                     <p>A job tracking and management system for electricians to streamline workflow, track job progress, and manage client information</p>
                     <div class="tech-stack">
+                        <span class="tech">
+                            <img src="images/ts-logo-128.svg" class="tech-logo" alt="TypeScript">
+                            TypeScript
+                        </span>
                         <span class="tech">
                             <img src="images/nextjs-icon-light-background.svg" class="tech-logo" alt="Next.js">
                             Next.js
@@ -89,6 +93,10 @@
                         <span class="tech">
                             <img src="images/firebase.svg" class="tech-logo" alt="Firebase">
                             Firebase
+                        </span>
+                        <span class="tech">
+                            <img src="images/OpenAI-black-monoblossom.svg" class="tech-logo" alt="OpenAI">
+                            OpenAI 
                         </span>
                     </div>
                     <div class="project-links">
@@ -103,8 +111,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Pocket Trainer Project -->
+
             <div class="project-card">
                 <div class="project-visual">
                     <div class="project-type-label mobile">
@@ -118,13 +125,13 @@
                             <img src="images/PocketTrainer_NutritionPlan.png" class="project-image" alt="Nutrition Planning Screen">
                         </div>
                         <div class="slider-controls">
-                            <button class="slider-button prev" onclick="changeSlide('pocket-trainer', -1)">❮</button>
-                            <button class="slider-button next" onclick="changeSlide('pocket-trainer', 1)">❯</button>
+                            <button class="slider-button prev">❮</button>
+                            <button class="slider-button next">❯</button>
                         </div>
                         <div class="slider-dots">
-                            <span class="dot active" onclick="currentSlide('pocket-trainer', 1)"></span>
-                            <span class="dot" onclick="currentSlide('pocket-trainer', 2)"></span>
-                            <span class="dot" onclick="currentSlide('pocket-trainer', 3)"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
                     </div>
                 </div>
@@ -151,7 +158,6 @@
                 </div>
             </div>
 
-            <!-- TruLuxe Electric Website Project -->
             <div class="project-card">
                 <div class="project-visual">
                     <div class="project-type-label website">
@@ -167,15 +173,15 @@
                             <img src="images/TruLuxeResidential.png" class="project-image" alt="TruLuxe Residential Services Section">
                         </div>
                         <div class="slider-controls">
-                            <button class="slider-button prev" onclick="changeSlide('truluxe-electric', -1)">❮</button>
-                            <button class="slider-button next" onclick="changeSlide('truluxe-electric', 1)">❯</button>
+                            <button class="slider-button prev">❮</button>
+                            <button class="slider-button next">❯</button>
                         </div>
                         <div class="slider-dots">
-                            <span class="dot active" onclick="currentSlide('truluxe-electric', 1)"></span>
-                            <span class="dot" onclick="currentSlide('truluxe-electric', 2)"></span>
-                            <span class="dot" onclick="currentSlide('truluxe-electric', 3)"></span>
-                            <span class="dot" onclick="currentSlide('truluxe-electric', 4)"></span>
-                            <span class="dot" onclick="currentSlide('truluxe-electric', 5)"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
                     </div>
                 </div>
@@ -201,7 +207,6 @@
                 </div>
             </div>
 
-            <!-- Soccer Analysis Tool Project -->
             <div class="project-card">
                 <div class="project-visual">
                     <div class="project-type-label cli">
@@ -241,10 +246,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2>Get in touch with Christopher</h2>
         <div class="contact-grid">
@@ -269,120 +274,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <h3>&copy; Copyright 2025. All rights reserved.</h3>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        //Animated dot grid for hero section
-        const container = document.getElementById('dotGrid');
-        const dots = [];
-        const dotData = [];
-        const containerRect = container.getBoundingClientRect();
-        const cols = Math.floor(containerRect.width/35);
-        const rows = Math.floor(containerRect.height/35);
-
-        for(let i = 0; i < rows*cols; ++i){
-            const dot = document.createElement('div');
-            dot.className = 'dot';
-            container.appendChild(dot);
-            dots.push(dot);
-
-            const row = Math.floor(i/cols);
-            const col = i % cols;
-            dotData.push({row, col, element: dot});
-        }
-
-        let mouseX = -1000;
-        let mouseY = -1000;
-
-        container.addEventListener('mousemove', (e) => {
-            const rect = container.getBoundingClientRect();
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
-        });
-
-        container.addEventListener('mouseleave', () => {
-            mouseX = -1000;
-            mouseY = -1000;
-        });
-        function updateDots(){
-            dotData.forEach((data) => {
-                const spacing = containerRect.width/cols;
-                const dotX = data.col * spacing + spacing / 2;
-                const dotY = data.row * spacing + spacing / 2;
-                const distance = Math.sqrt(((mouseX-dotX)**2) + ((mouseY-dotY) **2));
-
-                if(distance < 120){
-                    data.element.classList.add('bright');
-                }
-                else{
-                    data.element.classList.remove('bright');
-                }
-            });
-        }
-        setInterval(updateDots, 10);
-    </script>
     <script src="animations.js"></script>
     <script>
-        //Object to track slide indices for each project
-        const projectSlideIndices = {};
-
-        function changeSlide(projectId, n) {
-            if (!projectSlideIndices[projectId]) {
-                projectSlideIndices[projectId] = 1;
-            }
-            showSlide(projectId, projectSlideIndices[projectId] += n);
-        }
-
-        function currentSlide(projectId, n) {
-            showSlide(projectId, projectSlideIndices[projectId] = n);
-        }
-
-        function showSlide(projectId, n) {
-            const projectContainer = document.querySelector(`[data-project="${projectId}"]`);
-            if (!projectContainer) return;
-
-            const slides = projectContainer.querySelectorAll('.project-image');
-            const dots = projectContainer.querySelectorAll('.dot');
-            
-            if (!projectSlideIndices[projectId]) {
-                projectSlideIndices[projectId] = 1;
-            }
-
-            if (n > slides.length) {
-                projectSlideIndices[projectId] = 1;
-            }
-            if (n < 1) {
-                projectSlideIndices[projectId] = slides.length;
-            }
-
-            //Pause videos for this project
-            const videos = projectContainer.querySelectorAll('.project-video');
-            videos.forEach(video => video.pause());
-
-            //Remove active class from all slides and dots in this project
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-
-            //Add active class to current slide and dot in this project
-            const currentIndex = projectSlideIndices[projectId] - 1;
-            if (slides[currentIndex]) slides[currentIndex].classList.add('active');
-            if (dots[currentIndex]) dots[currentIndex].classList.add('active');
-        }
-
-        //Initialize all projects on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const projects = document.querySelectorAll('[data-project]');
-            projects.forEach(project => {
-                const projectId = project.getAttribute('data-project');
-                projectSlideIndices[projectId] = 1;
-                showSlide(projectId, 1); //Make sure first slide is shown
-            });
-        });
+        // Dot grid logic remains separate here if needed, or keep it in animations.js
     </script>
-
 </body>
 </html>

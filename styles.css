@@ -319,6 +319,7 @@ section{
     display: flex;
     gap: 10px;
     margin: 15px 0;
+    flex-wrap: wrap;
     
 }
 
@@ -478,16 +479,21 @@ footer h3{
 }
 
 .project-card .project-visual{
-    flex: 1;
+    flex: 0 0 50%;
+    max-width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    position: relative;
 }
 
 .project-card .card-content{
     flex: 1;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-images {
