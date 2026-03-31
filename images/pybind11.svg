@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="pybind11Title">
-  <title id="pybind11Title">pybind11</title>
-  <rect x="2.5" y="4" width="9" height="12" rx="3" fill="#3776AB"/>
-  <rect x="12.5" y="8" width="9" height="12" rx="3" fill="#F89820"/>
-  <path d="M11 10.5h2v3h-2zM11 14.5h2v3h-2z" fill="#F5F7FA"/>
-</svg>
