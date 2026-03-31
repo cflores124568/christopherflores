@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="pdfLibTitle">
+  <title id="pdfLibTitle">pdf-lib</title>
+  <path d="M7 2.5h7.8L19.5 7v13a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 20V4A1.5 1.5 0 0 1 7 2.5Z" fill="#EF4444"/>
+  <path d="M14.8 2.5V7h4.7" fill="#FCA5A5"/>
+  <path d="M8.5 11.2h7M8.5 14.2h7M8.5 17.2h4.6" fill="none" stroke="#FFF7ED" stroke-linecap="round" stroke-width="1.7"/>
+</svg>
