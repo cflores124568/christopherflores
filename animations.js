@@ -3,7 +3,13 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  
+  const body = document.body;
+  const navbar = document.querySelector('.navbar');
+  const mobileMenuButton = document.getElementById('mobile-menu');
+  const navbarMenu = document.getElementById('primary-nav');
+  const navLinks = document.querySelectorAll('.navbar-link');
+  const mobileMenuIcon = mobileMenuButton ? mobileMenuButton.querySelector('i') : null;
+
   // Observer configuration
   const observerOptions = {
     threshold: 0.1, // Trigger when 10% of element is visible
@@ -24,8 +30,44 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.contact-card').forEach(card => fadeInObserver.observe(card));
   document.querySelectorAll('#projects h2, #contact h2').forEach(header => fadeInObserver.observe(header));
 
-  // Navbar background on scroll
-  const navbar = document.querySelector('.navbar');
+  function closeMobileMenu() {
+    if (!mobileMenuButton || !navbarMenu) return;
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
+    navbarMenu.classList.remove('is-open');
+    body.classList.remove('menu-open');
+    if (mobileMenuIcon) {
+      mobileMenuIcon.classList.remove('fa-xmark');
+      mobileMenuIcon.classList.add('fa-bars');
+    }
+  }
+
+  function toggleMobileMenu() {
+    if (!mobileMenuButton || !navbarMenu) return;
+    const isOpen = navbarMenu.classList.toggle('is-open');
+    mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+    mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    body.classList.toggle('menu-open', isOpen);
+    if (mobileMenuIcon) {
+      mobileMenuIcon.classList.toggle('fa-bars', !isOpen);
+      mobileMenuIcon.classList.toggle('fa-xmark', isOpen);
+    }
+  }
+
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+  }
+
+  document.addEventListener('click', (event) => {
+    if (!navbarMenu || !navbarMenu.classList.contains('is-open')) return;
+    if (navbar.contains(event.target)) return;
+    closeMobileMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMobileMenu();
+  });
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       navbar.style.background = 'rgba(20, 2, 16, 0.95)';
@@ -44,8 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
       if (target) {
         const offsetTop = target.offsetTop - 80;
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        closeMobileMenu();
       }
     });
+  });
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === `#${entry.target.id}`;
+        link.classList.toggle('active', isActive);
+      });
+    });
+  }, {
+    rootMargin: '-35% 0px -45% 0px',
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('section[id]').forEach((section) => sectionObserver.observe(section));
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMobileMenu();
   });
   
 });
@@ -67,6 +130,7 @@ const dotData = [];
 let containerRect;
 
 function updateContainerRect() {
+    if (!container) return;
     containerRect = container.getBoundingClientRect();
     const cols = Math.floor(containerRect.width / 35);
     const rows = Math.floor(containerRect.height / 35);
@@ -93,19 +157,21 @@ window.addEventListener('resize', updateContainerRect);
 let mouseX = -1000;
 let mouseY = -1000;
 
-container.addEventListener('mousemove', (e) => {
-    const rect = container.getBoundingClientRect();
-    mouseX = e.clientX - rect.left;
-    mouseY = e.clientY - rect.top;
-});
+if (container) {
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+    });
 
-container.addEventListener('mouseleave', () => {
-    mouseX = -1000;
-    mouseY = -1000;
-});
+    container.addEventListener('mouseleave', () => {
+        mouseX = -1000;
+        mouseY = -1000;
+    });
+}
 
 function updateDots() {
-    if (!containerRect) return;
+    if (!container || !containerRect) return;
     const cols = Math.floor(containerRect.width / 35);
     const spacing = containerRect.width / cols;
 
