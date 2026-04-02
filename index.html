@@ -160,6 +160,64 @@
         <h2>My Projects</h2>
         <div class="projects-grid">
 
+            <div class="project-card featured-project">
+                <div class="project-visual">
+                    <div class="project-type-label platform">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Trading Platform
+                    </div>
+                    <div class="project-images trading-platform" data-project="trading-lab">
+                        <div class="image-slider">
+                            <img src="images/TradingLab_1.webp" class="project-image active" alt="Trading Lab dashboard with live futures chart">
+                            <img src="images/TradingLab_2.webp" class="project-image" alt="Trading Lab historical futures chart view">
+                            <img src="images/TradingLab_3.webp" class="project-image" alt="Trading Lab backtest configuration flow">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-button prev">❮</button>
+                            <button class="slider-button next">❯</button>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="project-kicker">Featured Build</span>
+                    <h3>Trading Lab</h3>
+                    <p>Trading Lab is a futures backtesting and replay platform I am building to evaluate discretionary and systematic strategies against real prop firm constraints.</p>
+                    <p>It combines a FastAPI backend, a SolidJS frontend, and a C++17 backtesting engine exposed through <code>pybind11</code>, plus a Databento to parquet to PostgreSQL/TimescaleDB data pipeline for faster historical syncs, replay workflows, and lower storage costs.</p>
+                    <div class="project-highlights">
+                        <span class="highlight-pill">Backtests with prop firm rule presets</span>
+                        <span class="highlight-pill">Replay-driven strategy evaluation</span>
+                        <span class="highlight-pill">Compiled simulation engine for speed</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech">
+                            <img src="images/python.svg" class="tech-logo" alt="Python">
+                            Python
+                        </span>
+                        <span class="tech">FastAPI</span>
+                        <span class="tech">SolidJS</span>
+                        <span class="tech">
+                            <img src="images/cplusplus.svg" class="tech-logo" alt="C Plus Plus">
+                            C++17
+                        </span>
+                        <span class="tech">pybind11</span>
+                        <span class="tech">
+                            <img src="images/postgresql.svg" class="tech-logo" alt="PostgreSQL">
+                            PostgreSQL
+                        </span>
+                        <span class="tech">TimescaleDB</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-status">Private build</span>
+                        <span class="project-status">In active development</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="project-card">
                 <div class="project-visual">
                     <div class="project-type-label web-app">
