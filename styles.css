@@ -1227,6 +1227,7 @@ html {
 
 #name {
     max-width: 920px;
+    display: block;
     margin: 0 auto;
     border-right: 0;
     white-space: normal;
@@ -1237,6 +1238,7 @@ html {
     letter-spacing: -0.065em;
     background: linear-gradient(105deg, #ffffff 0%, #dff9ff 42%, #79f2c0 72%, #ff87bd 100%);
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
@@ -1488,9 +1490,7 @@ body.animations-ready .about-card {
 }
 
 body.animations-ready .hero-entrance {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: heroReveal 0.7s ease forwards;
+    animation: heroReveal 0.7s ease both;
 }
 
 body.animations-ready .hero-entrance-1 { animation-delay: 0.05s; }
