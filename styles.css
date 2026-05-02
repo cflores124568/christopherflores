@@ -1009,7 +1009,7 @@ footer h3{
 }
 
 .skills-intro {
-    max-width: 640px;
+    max-width: 720px;
     margin: 0 auto 2.25rem;
     text-align: center;
     font-family: 'Intel One Mono', monospace;
@@ -1021,18 +1021,27 @@ footer h3{
 .skills-grid {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    max-width: 860px;
+    gap: 22px;
+    max-width: 980px;
     margin: 0 auto;
 }
 
 .skills-group {
-    background: rgba(13, 10, 19, 0.48);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 1.1rem 1.15rem;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
-    backdrop-filter: blur(10px);
+    background:
+        radial-gradient(circle at top left, rgba(93, 182, 255, 0.1), transparent 18rem),
+        rgba(13, 10, 19, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    padding: 1.25rem;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(14px);
+}
+
+.primary-stack {
+    border-color: rgba(121, 242, 192, 0.18);
+    background:
+        radial-gradient(circle at 10% 0%, rgba(121, 242, 192, 0.13), transparent 18rem),
+        rgba(11, 14, 20, 0.68);
 }
 
 .skills-group-label {
@@ -1049,17 +1058,21 @@ footer h3{
 .skills-chips {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-chips.compact {
     gap: 8px;
 }
 
 .skill-chip {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 999px;
-    padding: 7px 12px;
+    padding: 8px 13px;
     font-family: 'Intel One Mono', monospace;
     font-size: 0.8rem;
     color: #111827;
@@ -1068,22 +1081,32 @@ footer h3{
     line-height: 1;
 }
 
+.skill-chip.featured {
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(121, 242, 192, 0.34);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
 .skill-chip:hover {
     background: #ffffff;
-    border-color: rgba(255, 0, 115, 0.45);
+    border-color: rgba(121, 242, 192, 0.55);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 0, 115, 0.14);
+    box-shadow: 0 8px 18px rgba(93, 182, 255, 0.16);
 }
 
 .skill-icon {
-    width: 14px !important;
-    height: 14px !important;
+    width: 16px !important;
+    height: 16px !important;
     object-fit: contain;
     flex-shrink: 0;
 }
 
-.skill-chip-text {
-    padding-left: 11px;
+.skill-chip.featured .skill-icon {
+    width: 20px !important;
+    height: 20px !important;
 }
 
 @media (max-width: 600px) {
@@ -1097,15 +1120,20 @@ footer h3{
         font-size: 0.76rem;
         padding: 6px 10px;
     }
+    .skill-chip.featured {
+        font-size: 0.82rem;
+        padding: 8px 11px;
+    }
 }
 
 body {
     margin: 0;
     color: #f6f7fb;
     background:
-        radial-gradient(circle at 14% 10%, rgba(29, 184, 245, 0.42), transparent 26rem),
-        radial-gradient(circle at 84% 18%, rgba(255, 0, 115, 0.2), transparent 22rem),
-        linear-gradient(135deg, #07080d 0%, #151124 52%, #08090e 100%);
+        radial-gradient(circle at 12% 10%, rgba(49, 196, 255, 0.55), transparent 28rem),
+        radial-gradient(circle at 82% 18%, rgba(255, 82, 168, 0.34), transparent 24rem),
+        radial-gradient(circle at 50% 92%, rgba(116, 86, 255, 0.28), transparent 28rem),
+        linear-gradient(135deg, #07080d 0%, #171127 48%, #08090e 100%);
 }
 
 html {
