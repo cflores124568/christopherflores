@@ -1103,9 +1103,9 @@ body {
     margin: 0;
     color: #f6f7fb;
     background:
-        radial-gradient(circle at 12% 8%, rgba(29, 184, 245, 0.62), transparent 28rem),
-        radial-gradient(circle at 86% 18%, rgba(255, 0, 115, 0.3), transparent 24rem),
-        linear-gradient(135deg, #07080d 0%, #161124 52%, #090a0f 100%);
+        radial-gradient(circle at 14% 10%, rgba(29, 184, 245, 0.42), transparent 26rem),
+        radial-gradient(circle at 84% 18%, rgba(255, 0, 115, 0.2), transparent 22rem),
+        linear-gradient(135deg, #07080d 0%, #151124 52%, #08090e 100%);
 }
 
 html {
@@ -1130,8 +1130,7 @@ html {
 .hero {
     overflow: hidden;
     background:
-        radial-gradient(circle at 50% 35%, rgba(93, 182, 255, 0.16), transparent 22rem),
-        radial-gradient(circle at 75% 60%, rgba(255, 77, 154, 0.1), transparent 18rem),
+        radial-gradient(circle at 50% 38%, rgba(93, 182, 255, 0.1), transparent 24rem),
         #050609;
 }
 
@@ -1139,8 +1138,8 @@ html {
     content: "";
     position: absolute;
     inset: auto -10% -18% -10%;
-    height: 34%;
-    background: linear-gradient(180deg, transparent, rgba(121, 242, 192, 0.08));
+    height: 30%;
+    background: linear-gradient(180deg, transparent, rgba(121, 242, 192, 0.045));
     filter: blur(30px);
     pointer-events: none;
 }
@@ -1167,10 +1166,10 @@ html {
     white-space: normal;
     overflow: visible;
     animation: none;
-    font-size: clamp(2.8rem, 8vw, 6.6rem);
-    line-height: 0.95;
-    letter-spacing: -0.07em;
-    background: linear-gradient(105deg, #ffffff 0%, #dff9ff 38%, #79f2c0 68%, #ff87bd 100%);
+    font-size: clamp(2.8rem, 8vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.065em;
+    background: linear-gradient(105deg, #ffffff 0%, #dff9ff 42%, #79f2c0 72%, #ff87bd 100%);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -1211,7 +1210,7 @@ html {
     border: 0;
     border-radius: 999px;
     background: linear-gradient(135deg, #ff0073, #ff7ab8);
-    box-shadow: 0 16px 32px rgba(255, 0, 115, 0.28);
+    box-shadow: 0 16px 32px rgba(255, 0, 115, 0.24);
 }
 
 .secondary-button {
@@ -1222,9 +1221,9 @@ html {
     padding: 12px 24px;
     color: #f6f7fb;
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
     font-weight: 700;
     transition: transform 0.2s ease, background 0.3s ease, border-color 0.3s ease;
@@ -1232,26 +1231,26 @@ html {
 
 .secondary-button:hover {
     transform: translateY(-2px);
-    background: rgba(121, 242, 192, 0.12);
-    border-color: rgba(121, 242, 192, 0.46);
+    background: rgba(121, 242, 192, 0.1);
+    border-color: rgba(121, 242, 192, 0.34);
 }
 
 .hero-proof {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.8rem;
-    max-width: 920px;
-    margin: 2.25rem auto 0;
+    gap: 0.75rem;
+    max-width: 880px;
+    margin: 1.75rem auto 0;
 }
 
 .hero-proof span {
-    padding: 0.85rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.055);
-    color: rgba(246, 247, 251, 0.7);
+    padding: 0.78rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.045);
+    color: rgba(246, 247, 251, 0.68);
     font-family: "Intel One Mono", monospace;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     line-height: 1.45;
     backdrop-filter: blur(10px);
 }
@@ -1260,7 +1259,7 @@ html {
     display: block;
     color: #ffffff;
     font-family: "Orbitron", sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -1459,6 +1458,9 @@ button:focus-visible,
     #name {
         font-size: clamp(2.25rem, 13vw, 3rem);
         letter-spacing: -0.05em;
+        white-space: normal;
+        border-right: 0;
+        animation: none;
     }
 
     #title,
@@ -1477,7 +1479,7 @@ button:focus-visible,
     }
 
     .hero-proof {
-        margin-top: 1.4rem;
+        margin-top: 1.35rem;
     }
 
     .about-mark {
