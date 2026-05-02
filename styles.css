@@ -57,19 +57,9 @@ body::before {
     background-clip: text;
     text-align: center;
     font-size: 3em;
-    /*Typing effect*/
-    border-right: 2px solid rgb(255, 0, 115);
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(17) 1s both, cursor 0.5s step-end infinite alternate;
-}
-@keyframes cursor{
-    50% {border-color: transparent;}
-}
-@keyframes typing{
-    from {width: 0;}
-    to {width: 17ch;}
 }
 
 /* Dot grid background */
@@ -265,7 +255,6 @@ section{
     }
     #title { font-size: 1.35em; }
     #greeting { font-size: 1.05em; }
-    #tagline { font-size: 1em; }
     .hero-content {
         padding: 0 18px;
         max-width: 100%;
@@ -1260,15 +1249,6 @@ html {
     line-height: 1.55;
 }
 
-#tagline {
-    max-width: 720px;
-    margin: 1rem auto 0;
-    color: rgba(246, 247, 251, 0.72);
-    font-family: "Intel One Mono", monospace;
-    font-size: clamp(0.95rem, 1.6vw, 1.08rem);
-    line-height: 1.7;
-}
-
 .hero-actions {
     display: flex;
     justify-content: center;
@@ -1339,6 +1319,17 @@ html {
     font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #about {
@@ -1496,6 +1487,19 @@ body.animations-ready .about-card {
     transition: opacity 0.65s ease, transform 0.65s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
+body.animations-ready .hero-entrance {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroReveal 0.7s ease forwards;
+}
+
+body.animations-ready .hero-entrance-1 { animation-delay: 0.05s; }
+body.animations-ready .hero-entrance-2 { animation-delay: 0.14s; }
+body.animations-ready .hero-entrance-3 { animation-delay: 0.24s; }
+body.animations-ready .hero-entrance-4 { animation-delay: 0.34s; }
+body.animations-ready .hero-entrance-5 { animation-delay: 0.44s; }
+body.animations-ready .hero-entrance-6 { animation-delay: 0.54s; }
+
 body.animations-ready .fade-in-visible {
     opacity: 1;
     transform: translateY(0);
@@ -1540,8 +1544,7 @@ button:focus-visible,
         animation: none;
     }
 
-    #title,
-    #tagline {
+    #title {
         font-size: 0.95rem;
     }
 
