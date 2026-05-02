@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarMenu = document.getElementById('primary-nav');
   const navLinks = document.querySelectorAll('.navbar-link');
   const mobileMenuIcon = mobileMenuButton ? mobileMenuButton.querySelector('i') : null;
+  const scrollProgress = document.getElementById('scrollProgress');
+
+  body.classList.add('animations-ready');
 
   // Observer configuration
   const observerOptions = {
@@ -26,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
   
   // Observe elements
-  document.querySelectorAll('.project-card').forEach(card => fadeInObserver.observe(card));
-  document.querySelectorAll('.contact-card').forEach(card => fadeInObserver.observe(card));
-  document.querySelectorAll('#projects h2, #contact h2').forEach(header => fadeInObserver.observe(header));
+  document.querySelectorAll('.project-card, .contact-card, .skills-group, .about-card, #projects h2, #contact h2, .projects-intro').forEach(element => {
+    fadeInObserver.observe(element);
+  });
 
   function closeMobileMenu() {
     if (!mobileMenuButton || !navbarMenu) return;
@@ -60,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', (event) => {
     if (!navbarMenu || !navbarMenu.classList.contains('is-open')) return;
+    if (!navbar) return;
     if (navbar.contains(event.target)) return;
     closeMobileMenu();
   });
@@ -68,7 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key === 'Escape') closeMobileMenu();
   });
 
-  window.addEventListener('scroll', () => {
+  function updateScrollUi() {
+    if (scrollProgress) {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+      scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+    }
+
+    if (!navbar) return;
+
     if (window.scrollY > 100) {
       navbar.style.background = 'rgba(20, 2, 16, 0.95)';
       navbar.style.boxShadow = '0 4px 12px rgba(6, 6, 206, 0.3)';
@@ -76,7 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar.style.background = 'rgba(20, 2, 16, 0.67)';
       navbar.style.boxShadow = '0 2px 5px rgba(6, 6, 206, 0.2)';
     }
-  });
+  }
+
+  updateScrollUi();
+  window.addEventListener('scroll', updateScrollUi);
 
   // Smooth scroll for navbar links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -202,20 +217,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const slides = project.querySelectorAll('.project-image, .project-video');
         const dotsContainer = project.querySelector('.slider-dots');
-        dotsContainer.innerHTML = '';
+        let counter = project.querySelector('.slider-counter');
+
+        if (!counter && slides.length > 1) {
+            counter = document.createElement('span');
+            counter.className = 'slider-counter';
+            project.appendChild(counter);
+        }
+
+        if (dotsContainer) dotsContainer.innerHTML = '';
 
         slides.forEach((_, index) => {
+            if (!dotsContainer) return;
             const dot = document.createElement('span');
             dot.className = 'dot';
+            dot.setAttribute('role', 'button');
+            dot.setAttribute('tabindex', '0');
+            dot.setAttribute('aria-label', `Show slide ${index + 1}`);
             dot.addEventListener('click', () => showSlide(projectId, index));
+            dot.addEventListener('keydown', (event) => {
+                if (event.key !== 'Enter' && event.key !== ' ') return;
+                event.preventDefault();
+                showSlide(projectId, index);
+            });
             dotsContainer.appendChild(dot);
         });
 
         const prevBtn = project.querySelector('.slider-button.prev');
         const nextBtn = project.querySelector('.slider-button.next');
 
-        prevBtn.addEventListener('click', () => changeSlide(projectId, -1));
-        nextBtn.addEventListener('click', () => changeSlide(projectId, 1));
+        if (prevBtn) prevBtn.addEventListener('click', () => changeSlide(projectId, -1));
+        if (nextBtn) nextBtn.addEventListener('click', () => changeSlide(projectId, 1));
+
+        project.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') changeSlide(projectId, -1);
+            if (event.key === 'ArrowRight') changeSlide(projectId, 1);
+        });
 
         showSlide(projectId, 0);
     });
@@ -231,6 +268,7 @@ function showSlide(projectId, n) {
 
     const slides = projectContainer.querySelectorAll('.project-image, .project-video');
     const dots = projectContainer.querySelectorAll('.dot');
+    const counter = projectContainer.querySelector('.slider-counter');
 
     if (n >= slides.length) n = 0;
     if (n < 0) n = slides.length - 1;
@@ -244,4 +282,5 @@ function showSlide(projectId, n) {
     const currentSlide = slides[n];
     if (currentSlide) currentSlide.classList.add('active');
     if (dots[n]) dots[n].classList.add('active');
+    if (counter) counter.textContent = `${n + 1}/${slides.length}`;
 }

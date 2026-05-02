@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Intel+One+Mono:ital,wght@0,300...700;1,300...700&family=Miniver&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <section class="hero" id="home">
         <div class="dot-grid-container" id="dotGrid"></div>
         <nav class="navbar">
@@ -24,32 +25,64 @@
             </button>
             <ul class="navbar-menu" id="primary-nav">
                 <li class="navbar-item"><a href="#home" class="navbar-link">Home</a></li>
+                <li class="navbar-item"><a href="#about" class="navbar-link">About</a></li>
                 <li class="navbar-item"><a href="#skills" class="navbar-link">Stack</a></li>
                 <li class="navbar-item"><a href="#projects" class="navbar-link">Projects</a></li>
                 <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
             </ul>
         </nav>
         <div class="hero-content">
-            <h4 id="greeting">Hi, my name is</h4>
-            <h1 id="name">Christopher Flores</h1>
-            <h3 id="title">Software Engineer</h3>
-            <a href="#projects" class="cta-button" aria-label="View Christopher's projects">
-                View My Projects
-            </a>
+            <h4 id="greeting">Christopher Flores</h4>
+            <h1 id="name">I build trading systems and full-stack products.</h1>
+            <h3 id="title">Full-stack engineer focused on fintech, automation, and practical product UX.</h3>
+            <p id="tagline">I like the messy middle: turning raw data, real business workflows, and weird edge cases into tools that feel fast, useful, and built with care.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="cta-button" aria-label="View Christopher's projects">
+                    View Work
+                </a>
+                <a href="#contact" class="secondary-button" aria-label="Contact Christopher">
+                    Contact Me
+                </a>
+            </div>
+            <div class="hero-proof" aria-label="Portfolio focus areas">
+                <span><strong>Trading Lab</strong> C++17 + FastAPI + SolidJS</span>
+                <span><strong>Product Apps</strong> Next.js, Expo, Firebase</span>
+                <span><strong>AI/Automation</strong> OpenAI, OpenCV, data pipelines</span>
+            </div>
             <div class="social-links">
-                <a href="https://github.com/cflores124568" target="_blank" class="social-icon">
+                <a href="https://github.com/cflores124568" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Christopher's GitHub profile">
                     <i class="fa-brands fa-github-alt"></i>
                 </a>
-                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank" class="social-icon">
+                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Christopher's LinkedIn profile">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
             </div>
         </div>
     </section>
 
+    <section id="about">
+        <div class="about-card">
+            <div class="about-mark" aria-hidden="true">
+                <img src="images/CF-monogram-from-MakeMonogram.com-1758503108.svg" alt="">
+            </div>
+            <div class="about-copy">
+                <span class="section-kicker">About</span>
+                <h2>I build the kind of software that has to survive real use.</h2>
+                <p>My work sits between product engineering and performance-heavy systems: trading tools, business workflow apps, mobile experiences, and computer vision utilities.</p>
+                <p>Right now I am especially focused on AI-powered trading workflows, fast backtesting infrastructure, and polished interfaces that make complex systems feel understandable.</p>
+            </div>
+            <div class="about-focus">
+                <span>Fintech systems</span>
+                <span>Full-stack products</span>
+                <span>Client-facing UX</span>
+                <span>Automation pipelines</span>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
         <h2>Tech Stack</h2>
-        <p class="skills-intro">Full-stack tools I use across product engineering, mobile development, and AI workflows.</p>
+        <p class="skills-intro">The stack I reach for when a project needs clean UI, reliable data flow, and enough performance headroom to avoid nonsense later.</p>
         <div class="skills-grid">
             <div class="skills-group">
                 <p class="skills-group-label">Languages</p>
@@ -158,7 +191,8 @@
     </section>
 
     <section id="projects">
-        <h2>My Projects</h2>
+        <h2>Featured Work</h2>
+        <p class="projects-intro">A few builds that show the range: systems engineering, product UX, client work, mobile, and computer vision.</p>
         <div class="projects-grid">
 
             <div class="project-card featured-project">
@@ -189,6 +223,11 @@
                     <h3>Trading Lab</h3>
                     <p>Trading Lab is a futures backtesting and replay platform I am building to evaluate discretionary and systematic strategies against real prop firm constraints.</p>
                     <p>It combines a FastAPI backend, a SolidJS frontend, and a C++17 backtesting engine exposed through <code>pybind11</code>, plus a Databento to parquet to PostgreSQL/TimescaleDB data pipeline for faster historical syncs, replay workflows, and lower storage costs.</p>
+                    <div class="project-metrics" aria-label="Trading Lab proof points">
+                        <span><strong>C++17</strong> compiled backtest engine</span>
+                        <span><strong>TimescaleDB</strong> historical data pipeline</span>
+                        <span><strong>Replay</strong> prop-rule strategy testing</span>
+                    </div>
                     <div class="project-highlights">
                         <span class="highlight-pill">Backtests with prop firm rule presets</span>
                         <span class="highlight-pill">Replay-driven strategy evaluation</span>
@@ -248,7 +287,12 @@
                 </div>
                 <div class="card-content">
                     <h3>ElectriTrack</h3>
-                    <p>A job tracking and management system for electricians to streamline workflow, track job progress, and manage client information</p>
+                    <p>A job tracking and management system for electricians to streamline estimates, permits, invoices, job progress, and client information.</p>
+                    <div class="project-metrics" aria-label="ElectriTrack proof points">
+                        <span><strong>Field ops</strong> jobs, customers, documents</span>
+                        <span><strong>AI assist</strong> workflow automation</span>
+                        <span><strong>Firebase</strong> live app backend</span>
+                    </div>
                     <div class="tech-stack">
                         <span class="tech">
                             <img src="images/ts-logo-128.svg" class="tech-logo" alt="TypeScript">
@@ -272,11 +316,11 @@
                         </span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/cflores124568/electritrack" target="_blank" class="project-link">
+                        <a href="https://github.com/cflores124568/electritrack" target="_blank" rel="noopener noreferrer" class="project-link">
                             <i class="fa-brands fa-github"></i>
                             View Code
                         </a>
-                        <a href="https://electritrack.vercel.app" target="_blank" class="project-link">
+                        <a href="https://electritrack.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">
                             <i class="fa-solid fa-up-right-from-square"></i>
                             View Demo
                         </a>
@@ -311,6 +355,11 @@
                     <h3>Daniel Acosta Portfolio</h3>
                     <p>A custom Astro portfolio site for a multidisciplinary designer, built to showcase branding, packaging, and illustration work through art-directed layouts and immersive project pages.</p>
                     <p>I structured project content from a central data source, added a custom WebGL hero and lightbox galleries, and built a Puppeteer plus Sharp asset pipeline to pull Behance work into optimized WebP images.</p>
+                    <div class="project-metrics" aria-label="Daniel Acosta portfolio proof points">
+                        <span><strong>WebGL</strong> custom hero treatment</span>
+                        <span><strong>Astro</strong> content-driven pages</span>
+                        <span><strong>Sharp</strong> optimized WebP pipeline</span>
+                    </div>
                     <div class="tech-stack">
                         <span class="tech">
                             <img src="images/ts-logo-128.svg" class="tech-logo" alt="TypeScript">
@@ -356,6 +405,11 @@
                     <h3>Pocket Trainer</h3>
                     <p>A comprehensive fitness and nutrition app where users can create personalized workout and nutrition plans based on their specific goals and preferences.</p>
                     <p>Features an interactive SVG muscle diagram allowing users to explore and select exercises targeting specific muscle groups.</p>
+                    <div class="project-metrics" aria-label="Pocket Trainer proof points">
+                        <span><strong>Mobile UX</strong> React Native app flow</span>
+                        <span><strong>SVG</strong> muscle targeting UI</span>
+                        <span><strong>Firebase</strong> user data layer</span>
+                    </div>
                     <div class="tech-stack">
                         <span class="tech">
                             <img src="images/react.svg" class="tech-logo" alt="React">
@@ -367,7 +421,7 @@
                         </span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/cflores124568/pocket-trainer" target="_blank" class="project-link">
+                        <a href="https://github.com/cflores124568/pocket-trainer" target="_blank" rel="noopener noreferrer" class="project-link">
                             <i class="fa-brands fa-github"></i>
                             View Code
                         </a>
@@ -404,7 +458,12 @@
                 </div>
                 <div class="card-content">
                     <h3>TruLuxe Electric Website</h3>
-                    <p>A website I designed for TruLuxe Electric.</p>
+                    <p>A mobile-first company website for TruLuxe Electric, designed to make service areas, residential work, and contact paths easy to scan.</p>
+                    <div class="project-metrics" aria-label="TruLuxe Electric proof points">
+                        <span><strong>Live site</strong> client-facing launch</span>
+                        <span><strong>Next.js</strong> service-page structure</span>
+                        <span><strong>Mobile</strong> local business UX</span>
+                    </div>
                     <div class="tech-stack">
                         <span class="tech">
                             <img src="images/nextjs-icon-light-background.svg" class="tech-logo" alt="Next.js">
@@ -416,7 +475,7 @@
                         </span>
                     </div>
                     <div class="project-links">
-                        <a href="https://www.truluxeelectric.com" target="_blank" class="project-link">
+                        <a href="https://www.truluxeelectric.com" target="_blank" rel="noopener noreferrer" class="project-link">
                             <i class="fa-solid fa-up-right-from-square"></i>
                             Visit Site
                         </a>
@@ -441,6 +500,11 @@
                     <h3>Soccer Analysis Tool</h3>
                     <p>A command-line script that takes an input video of soccer gameplay and returns the same video with overlayed tracking analysis.</p>
                     <p>Specifically, this analysis includes ball possession tracker, speed and distance details of the ball, and rings around players.</p>
+                    <div class="project-metrics" aria-label="Soccer Analysis Tool proof points">
+                        <span><strong>YOLOv8</strong> player and ball detection</span>
+                        <span><strong>OpenCV</strong> video overlays</span>
+                        <span><strong>CLI</strong> video-in, video-out flow</span>
+                    </div>
                     <div class="tech-stack">
                         <span class="tech">
                             <img src="images/python.svg" class="tech-logo" alt="Python Logo">
@@ -456,7 +520,7 @@
                         </span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/cflores124568/soccer-analysis" target="_blank" class="project-link">
+                        <a href="https://github.com/cflores124568/soccer-analysis" target="_blank" rel="noopener noreferrer" class="project-link">
                             <i class="fa-brands fa-github"></i>
                             View Code
                         </a>
@@ -477,13 +541,13 @@
                 </a>
             </div>
             <div class="contact-card">
-                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank">
+                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank" rel="noopener noreferrer">
                     <h3>Linkedin</h3>
                     <i class="fa-brands fa-linkedin fa-2xl"></i>
                 </a>
             </div>
             <div class="contact-card">
-                <a href="https://github.com/cflores124568" target="_blank">
+                <a href="https://github.com/cflores124568" target="_blank" rel="noopener noreferrer">
                     <h3>Github</h3>
                     <i class="fa-brands fa-github fa-2xl"></i>
                 </a>
