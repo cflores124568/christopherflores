@@ -1061,8 +1061,50 @@ footer h3{
     gap: 10px;
 }
 
+.featured-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+    gap: 14px;
+}
+
 .skills-chips.compact {
     gap: 8px;
+}
+
+.featured-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 6px 4px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.featured-skill:hover {
+    transform: translateY(-2px);
+}
+
+.featured-skill-mark {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 30% 25%, rgba(121, 242, 192, 0.18), transparent 60%),
+        rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.featured-skill-label {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .skill-chip {
@@ -1081,15 +1123,6 @@ footer h3{
     line-height: 1;
 }
 
-.skill-chip.featured {
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.98);
-    border-color: rgba(121, 242, 192, 0.34);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
 .skill-chip:hover {
     background: #ffffff;
     border-color: rgba(121, 242, 192, 0.55);
@@ -1104,14 +1137,34 @@ footer h3{
     flex-shrink: 0;
 }
 
-.skill-chip.featured .skill-icon {
-    width: 20px !important;
-    height: 20px !important;
+.featured-skill-icon {
+    width: 38px !important;
+    height: 38px !important;
 }
 
 @media (max-width: 600px) {
     .skills-group {
         padding: 1rem;
+    }
+    .featured-skills {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px 8px;
+    }
+    .featured-skill {
+        gap: 8px;
+        padding: 4px 2px 0;
+    }
+    .featured-skill-mark {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+    }
+    .featured-skill-label {
+        font-size: 0.68rem;
+    }
+    .featured-skill-icon {
+        width: 32px !important;
+        height: 32px !important;
     }
     .skills-chips {
         gap: 7px;
@@ -1119,10 +1172,6 @@ footer h3{
     .skill-chip {
         font-size: 0.76rem;
         padding: 6px 10px;
-    }
-    .skill-chip.featured {
-        font-size: 0.82rem;
-        padding: 8px 11px;
     }
 }
 
