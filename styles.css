@@ -654,6 +654,21 @@ footer h3{
     max-height: 300px;
 }
 
+/* ElectriTrack's mobile mockups are tall product views. Keep the full phone visible
+   inside the existing web-app card instead of cropping the feature screen. */
+.project-images.electritrack-project .image-slider {
+    background: #080b12;
+}
+
+.project-images.electritrack-project .project-image {
+    width: 100%;
+    height: 430px;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    background: #080b12;
+}
+
 .project-images.trading-platform {
     max-width: 700px;
     background: linear-gradient(145deg, #101217, #1a1d24);
@@ -896,6 +911,9 @@ footer h3{
         padding: 0 12px;
         box-sizing: border-box;
     }
+    .project-images.electritrack-project .project-image{
+        height: 360px;
+    }
     .project-images.mobile-app .slider-button.prev,
     .project-images.web-app .slider-button.prev,
     .project-images.website .slider-button.prev,
@@ -944,6 +962,9 @@ footer h3{
     .project-images.web-app{
         max-width: 100%;
         padding: 12px;
+    }
+    .project-images.electritrack-project .project-image{
+        height: 300px;
     }
 
     .project-images.website{
