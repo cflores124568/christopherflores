@@ -801,6 +801,23 @@ footer h3{
 .project-images.web-app .slider-button.prev { margin-left: -25px; }
 .project-images.web-app .slider-button.next { margin-right: -20px; }
 
+/* Keep both ElectriTrack arrows inside each gallery frame at every breakpoint. */
+.project-images.web-app.electritrack-web-gallery .slider-controls,
+.project-images.web-app.electritrack-mobile-gallery .slider-controls {
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.project-images.web-app.electritrack-web-gallery .slider-button.prev,
+.project-images.web-app.electritrack-mobile-gallery .slider-button.prev {
+    margin-left: 0;
+}
+
+.project-images.web-app.electritrack-web-gallery .slider-button.next,
+.project-images.web-app.electritrack-mobile-gallery .slider-button.next {
+    margin-right: 0;
+}
+
 .project-images.website .slider-button.prev { margin-left: -40px; }
 .project-images.website .slider-button.next { margin-right: -5px; }
 
