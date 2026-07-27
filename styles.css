@@ -810,25 +810,36 @@ footer h3{
 .project-images.web-app .slider-button.next { margin-right: -20px; }
 
 /* Keep both ElectriTrack arrows inside each gallery frame at every breakpoint.
-   Pin left/right instead of width: 100% so the controls track the padding box
-   rather than overflowing it by the frame's own padding. */
+   display: contents drops the full-width controls bar so each button anchors
+   directly to .project-images. No width or margin math, so neither arrow can
+   overflow the frame and get clipped by the card's overflow: hidden. */
 .project-images.web-app.electritrack-web-gallery .slider-controls,
 .project-images.web-app.electritrack-mobile-gallery .slider-controls {
-    left: 0;
-    right: 0;
-    width: auto;
-    padding: 0 12px;
-    box-sizing: border-box;
+    display: contents;
+}
+
+.project-images.web-app.electritrack-web-gallery .slider-button,
+.project-images.web-app.electritrack-mobile-gallery .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 10;
+}
+
+.project-images.web-app.electritrack-web-gallery .slider-button:hover,
+.project-images.web-app.electritrack-mobile-gallery .slider-button:hover {
+    transform: translateY(-50%) scale(1.05);
 }
 
 .project-images.web-app.electritrack-web-gallery .slider-button.prev,
 .project-images.web-app.electritrack-mobile-gallery .slider-button.prev {
-    margin-left: 0;
+    left: 12px;
 }
 
 .project-images.web-app.electritrack-web-gallery .slider-button.next,
 .project-images.web-app.electritrack-mobile-gallery .slider-button.next {
-    margin-right: 0;
+    right: 12px;
 }
 
 .project-images.website .slider-button.prev { margin-left: -40px; }
