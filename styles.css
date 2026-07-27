@@ -809,9 +809,14 @@ footer h3{
 .project-images.web-app .slider-button.prev { margin-left: -25px; }
 .project-images.web-app .slider-button.next { margin-right: -20px; }
 
-/* Keep both ElectriTrack arrows inside each gallery frame at every breakpoint. */
+/* Keep both ElectriTrack arrows inside each gallery frame at every breakpoint.
+   Pin left/right instead of width: 100% so the controls track the padding box
+   rather than overflowing it by the frame's own padding. */
 .project-images.web-app.electritrack-web-gallery .slider-controls,
 .project-images.web-app.electritrack-mobile-gallery .slider-controls {
+    left: 0;
+    right: 0;
+    width: auto;
     padding: 0 12px;
     box-sizing: border-box;
 }
@@ -970,6 +975,9 @@ footer h3{
         margin-bottom: 0.85rem;
     }
     .project-images .slider-controls{
+        left: 0;
+        right: 0;
+        width: auto;
         padding: 0 12px;
         box-sizing: border-box;
     }
