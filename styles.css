@@ -1586,8 +1586,8 @@ body.animations-ready #contact h2,
 body.animations-ready .projects-intro,
 body.animations-ready .skills-group,
 body.animations-ready .about-card {
-    opacity: 0;
-    transform: translateY(24px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.65s ease, transform 0.65s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
@@ -1940,8 +1940,8 @@ button:focus-visible,
 
 body.animations-ready .work-project,
 body.animations-ready .work-heading {
-    opacity: 0;
-    transform: translateY(24px);
+    opacity: 1;
+    transform: none;
     transition: opacity 650ms ease, transform 650ms ease, border-color 260ms ease, box-shadow 260ms ease;
 }
 
