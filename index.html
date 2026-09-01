@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Christopher Flores</title>
-    <link rel="stylesheet" href="styles.css?v=2">
+    <meta name="description" content="Christopher Flores builds full-stack products, trading tools, mobile apps, and automation systems.">
+    <title>Christopher Flores | Full-stack engineer</title>
+    <link rel="stylesheet" href="styles.css?v=4">
     <script src="https://kit.fontawesome.com/871fa37df6.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Intel+One+Mono:ital,wght@0,300...700;1,300...700&family=Miniver&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Intel+One+Mono:ital,wght@0,300...700;1,300...700&amp;family=Miniver&amp;family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
     <section class="hero" id="home">
         <div class="dot-grid-container" id="dotGrid"></div>
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Primary navigation">
             <div class="navbar-brand">
                 <a href="/" class="logo">
                     <img src="images/CF-monogram-from-MakeMonogram.com-1758503108.svg" alt="Christopher Flores Logo" class="logo-image">
@@ -36,12 +38,8 @@
             <h1 id="name" class="hero-entrance hero-entrance-2">I build full-stack products and trading tools.</h1>
             <h3 id="title" class="hero-entrance hero-entrance-3">Full-stack engineer focused on fintech, automation, and practical product UX.</h3>
             <div class="hero-actions hero-entrance hero-entrance-4">
-                <a href="#projects" class="cta-button" aria-label="View Christopher's projects">
-                    View Work
-                </a>
-                <a href="#contact" class="secondary-button" aria-label="Contact Christopher">
-                    Contact Me
-                </a>
+                <a href="#projects" class="cta-button" aria-label="View Christopher's projects">View Work</a>
+                <a href="#contact" class="secondary-button" aria-label="Contact Christopher">Contact Me</a>
             </div>
             <div class="hero-proof hero-entrance hero-entrance-5" aria-label="Current work and focus areas">
                 <span><strong>Building now</strong> Futures backtesting platform</span>
@@ -49,566 +47,181 @@
                 <span><strong>Tooling</strong> Data pipelines, AI, and automation</span>
             </div>
             <div class="social-links hero-entrance hero-entrance-6">
-                <a href="https://github.com/cflores124568" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Christopher's GitHub profile">
-                    <i class="fa-brands fa-github-alt"></i>
-                </a>
-                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Christopher's LinkedIn profile">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
+                <a href="https://github.com/cflores124568" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Christopher's GitHub profile"><i class="fa-brands fa-github-alt"></i></a>
+                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Christopher's LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <div class="about-card">
-            <div class="about-mark" aria-hidden="true">
-                <img src="images/CF-monogram-from-MakeMonogram.com-1758503108.svg" alt="">
-            </div>
-            <div class="about-copy">
-                <span class="section-kicker">About</span>
-                <h2>I build the kind of software that has to survive real use.</h2>
-                <p>My work sits between product engineering and performance-heavy systems: trading tools, business workflow apps, mobile experiences, and internal tooling.</p>
-                <p>Right now I am especially focused on AI-powered trading workflows, fast backtesting infrastructure, and polished interfaces that make complex systems feel understandable.</p>
-            </div>
-            <div class="about-focus">
-                <span>Fintech systems</span>
-                <span>Full-stack products</span>
-                <span>Client-facing UX</span>
-                <span>Automation pipelines</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Tech Stack</h2>
-        <p class="skills-intro">I mostly build with React, TypeScript, Python, and PostgreSQL, then pull in the right mobile, AI, and workflow tools when the project needs them.</p>
-        <div class="skills-grid">
-            <div class="skills-group primary-stack">
-                <p class="skills-group-label">Primary Stack</p>
-                <div class="featured-skills">
-                    <span class="featured-skill">
-                        <span class="featured-skill-mark">
-                            <img src="images/ts-logo-128.svg" class="skill-icon featured-skill-icon" alt="TypeScript">
-                        </span>
-                        <span class="featured-skill-label">TypeScript</span>
-                    </span>
-                    <span class="featured-skill">
-                        <span class="featured-skill-mark">
-                            <img src="images/react.svg" class="skill-icon featured-skill-icon" alt="React">
-                        </span>
-                        <span class="featured-skill-label">React</span>
-                    </span>
-                    <span class="featured-skill">
-                        <span class="featured-skill-mark">
-                            <img src="images/nextjs-icon-light-background.svg" class="skill-icon featured-skill-icon" alt="Next.js">
-                        </span>
-                        <span class="featured-skill-label">Next.js</span>
-                    </span>
-                    <span class="featured-skill">
-                        <span class="featured-skill-mark">
-                            <img src="images/python.svg" class="skill-icon featured-skill-icon" alt="Python">
-                        </span>
-                        <span class="featured-skill-label">Python</span>
-                    </span>
-                    <span class="featured-skill">
-                        <span class="featured-skill-mark">
-                            <img src="images/postgresql.svg" class="skill-icon featured-skill-icon" alt="PostgreSQL">
-                        </span>
-                        <span class="featured-skill-label">PostgreSQL</span>
-                    </span>
-                    <span class="featured-skill">
-                        <span class="featured-skill-mark">
-                            <img src="images/firebase.svg" class="skill-icon featured-skill-icon" alt="Firebase">
-                        </span>
-                        <span class="featured-skill-label">Firebase</span>
-                    </span>
-                    <span class="featured-skill">
-                        <span class="featured-skill-mark">
-                            <img src="images/tailwindcss.svg" class="skill-icon featured-skill-icon" alt="Tailwind CSS">
-                        </span>
-                        <span class="featured-skill-label">Tailwind CSS</span>
-                    </span>
-                    <span class="featured-skill">
-                        <span class="featured-skill-mark">
-                            <img src="images/cplusplus.svg" class="skill-icon featured-skill-icon" alt="C Plus Plus">
-                        </span>
-                        <span class="featured-skill-label">C++</span>
-                    </span>
+    <main>
+        <section id="about" class="about-section">
+            <div class="about-card about-card-redesign">
+                <div class="about-copy">
+                    <span class="section-kicker">About</span>
+                    <h2>I build the kind of software that has to survive real use.</h2>
+                    <p>My work sits between product engineering and performance-heavy systems: trading tools, business workflow apps, mobile experiences, and internal tooling.</p>
+                    <p>Right now I am especially focused on AI-powered trading workflows, fast backtesting infrastructure, and polished interfaces that make complex systems feel understandable.</p>
+                </div>
+                <div class="about-focus" aria-label="Focus areas">
+                    <span>Fintech systems</span>
+                    <span>Full-stack products</span>
+                    <span>Client-facing UX</span>
+                    <span>Automation pipelines</span>
                 </div>
             </div>
+        </section>
 
-            <div class="skills-group supporting-stack">
-                <p class="skills-group-label">Also Work With</p>
-                <div class="skills-chips compact">
-                    <span class="skill-chip">
-                        <img src="images/javascript.svg" class="skill-icon" alt="JavaScript">
-                        JavaScript
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/expo.svg" class="skill-icon" alt="Expo">
-                        Expo
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/mongodb.svg" class="skill-icon" alt="MongoDB">
-                        MongoDB
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/docker.svg" class="skill-icon" alt="Docker">
-                        Docker
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/OpenAI-black-monoblossom.svg" class="skill-icon" alt="OpenAI">
-                        OpenAI API
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/vercel.svg" class="skill-icon" alt="Vercel">
-                        Vercel AI SDK
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/git.svg" class="skill-icon" alt="Git">
-                        Git
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/resend.svg" class="skill-icon" alt="Resend">
-                        Resend
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/pandas.svg" class="skill-icon" alt="Pandas">
-                        Pandas
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/numpy.svg" class="skill-icon" alt="NumPy">
-                        NumPy
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/html5.svg" class="skill-icon" alt="HTML5">
-                        HTML
-                    </span>
-                    <span class="skill-chip">
-                        <img src="images/css3.svg" class="skill-icon" alt="CSS3">
-                        CSS
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Featured Work</h2>
-        <p class="projects-intro">A few builds that show the range: systems engineering, product UX, client work, mobile, and automation.</p>
-        <div class="projects-grid">
-
-            <div class="project-card featured-project">
-                <div class="project-visual">
-                    <div class="project-type-label platform">
-                        <i class="fa-solid fa-chart-line"></i>
-                        Trading Platform
-                    </div>
-                    <div class="project-images trading-platform" data-project="trading-lab">
-                        <div class="image-slider">
-                            <img src="images/TradingLab_1.webp" class="project-image active" alt="Trading Lab session setup and prop firm ruleset launch flow">
-                            <img src="images/TradingLab_2.webp" class="project-image" alt="Trading Lab replay session with live trade controls and chart overlays">
-                            <img src="images/TradingLab_3.webp" class="project-image" alt="Trading Lab backtest calendar with daily P and L and drawdown tracking">
-                        </div>
-                        <div class="slider-controls">
-                            <button class="slider-button prev">❮</button>
-                            <button class="slider-button next">❯</button>
-                        </div>
-                        <div class="slider-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
+        <section id="skills">
+            <h2>Tech Stack</h2>
+            <p class="skills-intro">I mostly build with React, TypeScript, Python, and PostgreSQL, then pull in the right mobile, AI, and workflow tools when the project needs them.</p>
+            <div class="skills-grid">
+                <div class="skills-group primary-stack">
+                    <p class="skills-group-label">Primary Stack</p>
+                    <div class="featured-skills">
+                        <span class="featured-skill"><span class="featured-skill-mark"><img src="images/ts-logo-128.svg" class="skill-icon featured-skill-icon" alt="TypeScript"></span><span class="featured-skill-label">TypeScript</span></span>
+                        <span class="featured-skill"><span class="featured-skill-mark"><img src="images/react.svg" class="skill-icon featured-skill-icon" alt="React"></span><span class="featured-skill-label">React</span></span>
+                        <span class="featured-skill"><span class="featured-skill-mark"><img src="images/nextjs-icon-light-background.svg" class="skill-icon featured-skill-icon" alt="Next.js"></span><span class="featured-skill-label">Next.js</span></span>
+                        <span class="featured-skill"><span class="featured-skill-mark"><img src="images/python.svg" class="skill-icon featured-skill-icon" alt="Python"></span><span class="featured-skill-label">Python</span></span>
+                        <span class="featured-skill"><span class="featured-skill-mark"><img src="images/postgresql.svg" class="skill-icon featured-skill-icon" alt="PostgreSQL"></span><span class="featured-skill-label">PostgreSQL</span></span>
+                        <span class="featured-skill"><span class="featured-skill-mark"><img src="images/firebase.svg" class="skill-icon featured-skill-icon" alt="Firebase"></span><span class="featured-skill-label">Firebase</span></span>
+                        <span class="featured-skill"><span class="featured-skill-mark"><img src="images/tailwindcss.svg" class="skill-icon featured-skill-icon" alt="Tailwind CSS"></span><span class="featured-skill-label">Tailwind CSS</span></span>
+                        <span class="featured-skill"><span class="featured-skill-mark"><img src="images/cplusplus.svg" class="skill-icon featured-skill-icon" alt="C Plus Plus"></span><span class="featured-skill-label">C++</span></span>
                     </div>
                 </div>
-                <div class="card-content">
-                    <span class="project-kicker">Featured Build</span>
-                    <h3>Trading Lab</h3>
-                    <p>Trading Lab is a futures backtesting and replay platform I am building to evaluate discretionary and systematic strategies against real prop firm constraints.</p>
-                    <p>It combines a FastAPI backend, a SolidJS frontend, and a C++17 backtesting engine exposed through <code>pybind11</code>, plus a Databento to parquet to PostgreSQL/TimescaleDB data pipeline for faster historical syncs, replay workflows, and lower storage costs.</p>
-                    <div class="project-metrics" aria-label="Trading Lab proof points">
-                        <span><strong>C++17</strong> compiled backtest engine</span>
-                        <span><strong>TimescaleDB</strong> historical data pipeline</span>
-                        <span><strong>Replay</strong> prop-rule strategy testing</span>
-                    </div>
-                    <div class="project-highlights">
-                        <span class="highlight-pill">Backtests with prop firm rule presets</span>
-                        <span class="highlight-pill">Replay-driven strategy evaluation</span>
-                        <span class="highlight-pill">Compiled simulation engine for speed</span>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech">
-                            <img src="images/python.svg" class="tech-logo" alt="Python">
-                            Python
-                        </span>
-                        <span class="tech">FastAPI</span>
-                        <span class="tech">SolidJS</span>
-                        <span class="tech">
-                            <img src="images/cplusplus.svg" class="tech-logo" alt="C Plus Plus">
-                            C++17
-                        </span>
-                        <span class="tech">pybind11</span>
-                        <span class="tech">
-                            <img src="images/postgresql.svg" class="tech-logo" alt="PostgreSQL">
-                            PostgreSQL
-                        </span>
-                        <span class="tech">TimescaleDB</span>
-                    </div>
-                    <div class="project-links">
-                        <span class="project-status">Private build</span>
-                        <span class="project-status">In active development</span>
+                <div class="skills-group supporting-stack">
+                    <p class="skills-group-label">Also Work With</p>
+                    <div class="skills-chips compact">
+                        <span class="skill-chip"><img src="images/javascript.svg" class="skill-icon" alt="JavaScript">JavaScript</span>
+                        <span class="skill-chip"><img src="images/expo.svg" class="skill-icon" alt="Expo">Expo</span>
+                        <span class="skill-chip"><img src="images/mongodb.svg" class="skill-icon" alt="MongoDB">MongoDB</span>
+                        <span class="skill-chip"><img src="images/docker.svg" class="skill-icon" alt="Docker">Docker</span>
+                        <span class="skill-chip"><img src="images/OpenAI-black-monoblossom.svg" class="skill-icon" alt="OpenAI">OpenAI API</span>
+                        <span class="skill-chip"><img src="images/vercel.svg" class="skill-icon" alt="Vercel">Vercel AI SDK</span>
+                        <span class="skill-chip"><img src="images/git.svg" class="skill-icon" alt="Git">Git</span>
+                        <span class="skill-chip"><img src="images/resend.svg" class="skill-icon" alt="Resend">Resend</span>
+                        <span class="skill-chip"><img src="images/pandas.svg" class="skill-icon" alt="Pandas">Pandas</span>
+                        <span class="skill-chip"><img src="images/numpy.svg" class="skill-icon" alt="NumPy">NumPy</span>
+                        <span class="skill-chip"><img src="images/html5.svg" class="skill-icon" alt="HTML5">HTML</span>
+                        <span class="skill-chip"><img src="images/css3.svg" class="skill-icon" alt="CSS3">CSS</span>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <div class="project-visual">
-                    <div class="electritrack-media-stack">
-                        <section class="electritrack-media-section" aria-labelledby="electritrack-web-label">
-                            <div class="electritrack-section-label web-app" id="electritrack-web-label">
-                                <i class="fa-solid fa-laptop-code"></i>
-                                Web App
+        <section id="projects" class="work-section">
+            <div class="work-heading">
+                <h2>Featured Work</h2>
+                <p>Systems engineering, product UX, client work, mobile, and computer vision. Each project opens into a focused case study.</p>
+            </div>
+            <div class="work-list">
+                <article class="work-project work-project-featured">
+                    <a class="work-project-link" href="projects/trading-lab.html" aria-label="View the Trading Lab case study">
+                        <header class="work-project-header">
+                            <div>
+                                <span class="work-label">Featured work</span>
+                                <h3>Trading Lab</h3>
+                                <p>A futures backtesting and replay platform built around real prop firm constraints.</p>
+                                <span class="work-stack">Python / FastAPI / SolidJS / C++17 / PostgreSQL / TimescaleDB</span>
                             </div>
-                            <div class="project-images web-app electritrack-web-gallery" data-project="electritrack-web">
-                                <div class="image-slider">
-                                    <img src="images/ElectriTrackLanding.png" class="project-image active" alt="ElectriTrack Landing Page">
-                                    <img src="images/ElectriTrack_1.webp" class="project-image" alt="ElectriTrack estimate and invoice workflow">
-                                    <img src="images/ElectriTrack_2.webp" class="project-image" alt="ElectriTrack permit and job creation flow">
-                                    <img src="images/ElectriTrack_3.webp" class="project-image" alt="ElectriTrack business profile settings">
-                                    <img src="images/ElectriTrack_4.webp" class="project-image" alt="ElectriTrack dashboard with business signals">
-                                </div>
-                                <div class="slider-controls">
-                                    <button class="slider-button prev">❮</button>
-                                    <button class="slider-button next">❯</button>
-                                </div>
-                                <div class="slider-dots">
-                                    <span class="dot active"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
+                            <span class="work-project-cta">View case study <span aria-hidden="true">↗</span></span>
+                        </header>
+                        <div class="work-gallery work-gallery-landscape">
+                            <figure class="work-gallery-main"><img src="images/TradingLab_2.webp" alt="Trading Lab live replay workspace with chart overlays and execution controls" loading="lazy"><figcaption>Replay Lab</figcaption></figure>
+                            <div class="work-gallery-support">
+                                <figure><img src="images/TradingLab_1.webp" alt="Trading Lab session setup and ruleset launch workflow" loading="lazy"><figcaption>Session setup</figcaption></figure>
+                                <figure><img src="images/TradingLab_3.webp" alt="Trading Lab backtest calendar with daily profit and drawdown tracking" loading="lazy"><figcaption>Backtest calendar</figcaption></figure>
                             </div>
-                        </section>
-                        <section class="electritrack-media-section" aria-labelledby="electritrack-mobile-label">
-                            <div class="electritrack-section-label mobile" id="electritrack-mobile-label">
-                                <i class="fa-solid fa-mobile-screen-button"></i>
-                                Mobile App
+                        </div>
+                    </a>
+                </article>
+
+                <article class="work-project">
+                    <a class="work-project-link" href="projects/electritrack.html" aria-label="View the ElectriTrack case study">
+                        <header class="work-project-header">
+                            <div><h3>ElectriTrack</h3><p>Job management and quoting software for electrical contractors.</p><span class="work-stack">TypeScript / Next.js / Firebase / Stripe / React Native</span></div>
+                            <span class="work-project-cta">View project <span aria-hidden="true">↗</span></span>
+                        </header>
+                        <div class="work-gallery work-gallery-landscape">
+                            <figure class="work-gallery-main"><img src="images/ElectriTrack_1.webp" alt="ElectriTrack estimate and invoice workflow" loading="lazy"><figcaption>Job workspace</figcaption></figure>
+                            <div class="work-gallery-support">
+                                <figure class="work-gallery-phone"><img src="images/ElectriTrackMobileHome.png" alt="ElectriTrack mobile field dashboard" loading="lazy"><figcaption>Mobile field view</figcaption></figure>
+                                <figure><img src="images/ElectriTrackRevenueChart.png" alt="ElectriTrack revenue reporting chart" loading="lazy"><figcaption>Revenue reporting</figcaption></figure>
                             </div>
-                            <div class="project-images web-app electritrack-mobile-gallery" data-project="electritrack-mobile">
-                                <div class="image-slider">
-                                    <img src="images/ElectriTrackMobileHome.png" class="project-image active" alt="ElectriTrack mobile home dashboard with upcoming jobs and alerts">
-                                    <img src="images/ElectriTrackMobileJobs.png" class="project-image" alt="ElectriTrack mobile jobs list with scheduling and job status filters">
-                                    <img src="images/ElectriTrackMobileLoad.png" class="project-image" alt="ElectriTrack mobile electrical load calculation showing service capacity">
-                                    <img src="images/ElectriTrackMobileAI.png" class="project-image" alt="ElectriTrack mobile AI job draft with reviewed assumptions and job description">
-                                </div>
-                                <div class="slider-controls">
-                                    <button class="slider-button prev">❮</button>
-                                    <button class="slider-button next">❯</button>
-                                </div>
-                                <div class="slider-dots">
-                                    <span class="dot active"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="work-project">
+                    <a class="work-project-link" href="projects/daniel-acosta.html" aria-label="View the Daniel Acosta Portfolio case study">
+                        <header class="work-project-header">
+                            <div><h3>Daniel Acosta Portfolio</h3><p>An expressive Astro portfolio with interactive WebGL art direction.</p><span class="work-stack">TypeScript / Astro / WebGL / Puppeteer / Sharp</span></div>
+                            <span class="work-project-cta">View project <span aria-hidden="true">↗</span></span>
+                        </header>
+                        <div class="work-gallery work-gallery-editorial">
+                            <figure><img src="images/DanielAcosta_1.webp" alt="Daniel Acosta portfolio animated home experience" loading="lazy"><figcaption>Home experience</figcaption></figure>
+                            <figure class="work-gallery-main"><img src="images/DanielAcosta_3.webp" alt="Daniel Acosta selected work gallery" loading="lazy"><figcaption>Selected work</figcaption></figure>
+                            <figure><img src="images/DanielAcosta_2.webp" alt="Daniel Acosta project detail page" loading="lazy"><figcaption>Project detail</figcaption></figure>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="work-project">
+                    <a class="work-project-link" href="projects/pocket-trainer.html" aria-label="View the Pocket Trainer case study">
+                        <header class="work-project-header">
+                            <div><h3>Pocket Trainer</h3><p>A fitness and nutrition app designed for practical daily use.</p><span class="work-stack">React Native / Firebase</span></div>
+                            <span class="work-project-cta">View project <span aria-hidden="true">↗</span></span>
+                        </header>
+                        <div class="work-gallery work-gallery-mobile">
+                            <figure><img src="images/PocketTrainer.png" alt="Pocket Trainer welcome and login screen" loading="lazy"><figcaption>Welcome</figcaption></figure>
+                            <figure><img src="images/PocketTrainer_ExerciseDetails.png" alt="Pocket Trainer exercise instructions" loading="lazy"><figcaption>Exercise details</figcaption></figure>
+                            <figure><img src="images/PocketTrainer_NutritionPlan.png" alt="Pocket Trainer nutrition planner" loading="lazy"><figcaption>Nutrition plan</figcaption></figure>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="work-project">
+                    <a class="work-project-link" href="projects/truluxe-electric.html" aria-label="View the TruLuxe Electric case study">
+                        <header class="work-project-header">
+                            <div><h3>TruLuxe Electric</h3><p>A mobile-first service website with clear local conversion paths.</p><span class="work-stack">Next.js / Tailwind CSS</span></div>
+                            <span class="work-project-cta">View project <span aria-hidden="true">↗</span></span>
+                        </header>
+                        <div class="work-gallery work-gallery-editorial">
+                            <figure><img src="images/TruLuxeHomepage.png" alt="TruLuxe Electric homepage" loading="lazy"><figcaption>Homepage</figcaption></figure>
+                            <figure class="work-gallery-main"><img src="images/TruLuxeElectric_1.png" alt="TruLuxe Electric service website" loading="lazy"><figcaption>Service overview</figcaption></figure>
+                            <figure><img src="images/TruLuxeResidential.png" alt="TruLuxe Electric residential services" loading="lazy"><figcaption>Residential work</figcaption></figure>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="work-project">
+                    <a class="work-project-link" href="projects/soccer-analysis.html" aria-label="View the Soccer Analysis case study">
+                        <header class="work-project-header">
+                            <div><h3>Soccer Analysis</h3><p>Computer-vision tracking for players, movement, and match footage.</p><span class="work-stack">Python / YOLOv8 / OpenCV</span></div>
+                            <span class="work-project-cta">View project <span aria-hidden="true">↗</span></span>
+                        </header>
+                        <div class="work-gallery work-gallery-landscape">
+                            <figure class="work-gallery-main"><img src="images/SoccerAnalysis_1.jpg" alt="Soccer analysis with player tracking overlays" loading="lazy"><figcaption>Detection</figcaption></figure>
+                            <div class="work-gallery-support">
+                                <figure><img src="images/SoccerAnalysis_2.jpg" alt="Soccer player tracking and speed analysis" loading="lazy"><figcaption>Player tracking</figcaption></figure>
+                                <figure><img src="images/SoccerAnalysis_3.jpg" alt="Soccer movement trajectory analysis" loading="lazy"><figcaption>Movement analysis</figcaption></figure>
                             </div>
-                        </section>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <span class="project-kicker">Live Product</span>
-                    <h3>ElectriTrack</h3>
-                    <p>ElectriTrack is a field-first job management app for electricians, moving a small shop from lead to estimate to job to invoice. I built it from firsthand experience in the trade, where contractor software usually adds more office work than it removes.</p>
-                    <p>The web app runs on Next.js and Firebase, with Stripe Connect handling contractor payouts so customers can approve estimates and pay invoices from public links without an account. A companion Expo and React Native iOS app shares the same Firebase backend and domain helpers for job, customer, and invoice work in the field.</p>
-                    <div class="project-metrics" aria-label="ElectriTrack proof points">
-                        <span><strong>Stripe Connect</strong> live contractor payouts</span>
-                        <span><strong>Panel schedules</strong> generated as PDFs</span>
-                        <span><strong>iOS and web</strong> shared Firebase backend</span>
-                    </div>
-                    <div class="project-highlights">
-                        <span class="highlight-pill">Public estimate approval and payment links</span>
-                        <span class="highlight-pill">Permit, inspection, and panel workflows</span>
-                        <span class="highlight-pill">AI drafting with per-user daily limits</span>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech">
-                            <img src="images/ts-logo-128.svg" class="tech-logo" alt="TypeScript">
-                            TypeScript
-                        </span>
-                        <span class="tech">
-                            <img src="images/nextjs-icon-light-background.svg" class="tech-logo" alt="Next.js">
-                            Next.js
-                        </span>
-                        <span class="tech">
-                            <img src="images/tailwindcss.svg" class="tech-logo" alt="Tailwind CSS">
-                            Tailwind CSS
-                        </span>
-                        <span class="tech">
-                            <img src="images/firebase.svg" class="tech-logo" alt="Firebase">
-                            Firebase
-                        </span>
-                        <span class="tech">
-                            <img src="images/OpenAI-black-monoblossom.svg" class="tech-logo" alt="OpenAI">
-                            OpenAI
-                        </span>
-                        <span class="tech">Stripe Connect</span>
-                        <span class="tech">
-                            <img src="images/react.svg" class="tech-logo" alt="React Native">
-                            React Native
-                        </span>
-                        <span class="tech">
-                            <img src="images/expo.svg" class="tech-logo" alt="Expo">
-                            Expo
-                        </span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/cflores124568/electritrack" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fa-brands fa-github"></i>
-                            View Code
-                        </a>
-                        <a href="https://electritrack.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fa-solid fa-up-right-from-square"></i>
-                            Visit ElectriTrack
-                        </a>
-                    </div>
-                </div>
+                        </div>
+                    </a>
+                </article>
             </div>
+        </section>
 
-            <div class="project-card">
-                <div class="project-visual">
-                    <div class="project-type-label website">
-                        <i class="fa-solid fa-palette"></i>
-                        Creative Portfolio
-                    </div>
-                    <div class="project-images website" data-project="daniel-acosta">
-                        <div class="image-slider">
-                            <img src="images/DanielAcosta_1.webp" class="project-image active" alt="Daniel Acosta portfolio homepage with animated hero artwork">
-                            <img src="images/DanielAcosta_2.webp" class="project-image" alt="Daniel Acosta movie poster homage case study introduction">
-                            <img src="images/DanielAcosta_3.webp" class="project-image" alt="Daniel Acosta project gallery layout with poster artwork">
-                        </div>
-                        <div class="slider-controls">
-                            <button class="slider-button prev">❮</button>
-                            <button class="slider-button next">❯</button>
-                        </div>
-                        <div class="slider-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Daniel Acosta Portfolio</h3>
-                    <p>A custom Astro portfolio site for a multidisciplinary designer, built to showcase branding, packaging, and illustration work through art-directed layouts and immersive project pages.</p>
-                    <p>I structured project content from a central data source, added a custom WebGL hero and lightbox galleries, and built a Puppeteer plus Sharp asset pipeline to pull Behance work into optimized WebP images.</p>
-                    <div class="project-metrics" aria-label="Daniel Acosta portfolio proof points">
-                        <span><strong>WebGL</strong> custom hero treatment</span>
-                        <span><strong>Astro</strong> content-driven pages</span>
-                        <span><strong>Sharp</strong> optimized WebP pipeline</span>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech">
-                            <img src="images/ts-logo-128.svg" class="tech-logo" alt="TypeScript">
-                            TypeScript
-                        </span>
-                        <span class="tech">Astro</span>
-                        <span class="tech">WebGL/GLSL</span>
-                        <span class="tech">Puppeteer</span>
-                        <span class="tech">Sharp</span>
-                        <span class="tech">GLightbox</span>
-                    </div>
-                    <div class="project-links">
-                        <span class="project-status">Client-facing portfolio build</span>
-                        <span class="project-status">Static Astro deployment</span>
-                    </div>
-                </div>
+        <section id="contact">
+            <h2>Get in touch with Christopher</h2>
+            <div class="contact-grid">
+                <div class="contact-card"><a href="mailto:chrisefff@gmail.com"><h3>Email</h3><i class="fa-solid fa-envelope fa-2xl"></i></a></div>
+                <div class="contact-card"><a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank" rel="noopener noreferrer"><h3>LinkedIn</h3><i class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                <div class="contact-card"><a href="https://github.com/cflores124568" target="_blank" rel="noopener noreferrer"><h3>GitHub</h3><i class="fa-brands fa-github fa-2xl"></i></a></div>
             </div>
+        </section>
+    </main>
 
-            <div class="project-card">
-                <div class="project-visual">
-                    <div class="project-type-label mobile">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                        Mobile App
-                    </div>
-                    <div class="project-images mobile-app" data-project="pocket-trainer">
-                        <div class="image-slider">
-                            <img src="images/PocketTrainer.png" class="project-image active" alt="Pocket Trainer Login Screen">
-                            <img src="images/PocketTrainer_ExerciseDetails.png" class="project-image" alt="Exercise Details Screen">
-                            <img src="images/PocketTrainer_NutritionPlan.png" class="project-image" alt="Nutrition Planning Screen">
-                        </div>
-                        <div class="slider-controls">
-                            <button class="slider-button prev">❮</button>
-                            <button class="slider-button next">❯</button>
-                        </div>
-                        <div class="slider-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Pocket Trainer</h3>
-                    <p>A comprehensive fitness and nutrition app where users can create personalized workout and nutrition plans based on their specific goals and preferences.</p>
-                    <p>Features an interactive SVG muscle diagram allowing users to explore and select exercises targeting specific muscle groups.</p>
-                    <div class="project-metrics" aria-label="Pocket Trainer proof points">
-                        <span><strong>Mobile UX</strong> React Native app flow</span>
-                        <span><strong>SVG</strong> muscle targeting UI</span>
-                        <span><strong>Firebase</strong> user data layer</span>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech">
-                            <img src="images/react.svg" class="tech-logo" alt="React">
-                            React Native
-                        </span>
-                        <span class="tech">
-                            <img src="images/firebase.svg" class="tech-logo" alt="Firebase">
-                            Firebase
-                        </span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/cflores124568/pocket-trainer" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fa-brands fa-github"></i>
-                            View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-visual">
-                    <div class="project-type-label website">
-                        <i class="fa-solid fa-computer-mouse"></i>
-                        Website
-                    </div>
-                    <div class="project-images website" data-project="truluxe-electric">
-                        <div class="image-slider">
-                            <img src="images/TruLuxeElectric_1.png" class="project-image active" alt="TruLuxe Electric Homepage">
-                            <img src="images/TruLuxeElectric_2.png" class="project-image" alt="TruLuxe Electric Page 2">
-                            <img src="images/TruLuxeElectric_3.png" class="project-image" alt="TruLuxe Electric Page 3">
-                            <img src="images/TruLuxeElectric_4.png" class="project-image" alt="TruLuxe Electric Page 4">
-                            <img src="images/TruLuxeResidential.png" class="project-image" alt="TruLuxe Residential Services Section">
-                        </div>
-                        <div class="slider-controls">
-                            <button class="slider-button prev">❮</button>
-                            <button class="slider-button next">❯</button>
-                        </div>
-                        <div class="slider-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>TruLuxe Electric Website</h3>
-                    <p>A mobile-first company website for TruLuxe Electric, designed to make service areas, residential work, and contact paths easy to scan.</p>
-                    <div class="project-metrics" aria-label="TruLuxe Electric proof points">
-                        <span><strong>Live site</strong> client-facing launch</span>
-                        <span><strong>Next.js</strong> service-page structure</span>
-                        <span><strong>Mobile</strong> local business UX</span>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech">
-                            <img src="images/nextjs-icon-light-background.svg" class="tech-logo" alt="Next.js">
-                            Next.js
-                        </span>
-                        <span class="tech">
-                            <img src="images/tailwindcss.svg" class="tech-logo" alt="Tailwind CSS">
-                            Tailwind CSS
-                        </span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://www.truluxeelectric.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fa-solid fa-up-right-from-square"></i>
-                            Visit Site
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-visual">
-                    <div class="project-type-label cli">
-                        <i class="fa-solid fa-terminal"></i>
-                        CLI Tool
-                    </div>
-                    <div class="project-images cli" data-project="soccer-analysis">
-                        <video class="project-video active" controls>
-                            <source src="videos/output_video.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Soccer Analysis Tool</h3>
-                    <p>A command-line script that takes an input video of soccer gameplay and returns the same video with overlayed tracking analysis.</p>
-                    <p>Specifically, this analysis includes ball possession tracker, speed and distance details of the ball, and rings around players.</p>
-                    <div class="project-metrics" aria-label="Soccer Analysis Tool proof points">
-                        <span><strong>YOLOv8</strong> player and ball detection</span>
-                        <span><strong>OpenCV</strong> video overlays</span>
-                        <span><strong>CLI</strong> video-in, video-out flow</span>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech">
-                            <img src="images/python.svg" class="tech-logo" alt="Python Logo">
-                            Python
-                        </span>
-                        <span class="tech">
-                            <img src="images/OpenCV.svg" class="tech-logo" alt="OpenCV Logo">
-                            OpenCV
-                        </span>
-                        <span class="tech">
-                            <img src="images/Ultralytics_Logomark_Original.svg" class="tech-logo" alt="Ultralytics Logo">
-                            Ultralytics YOLOv8
-                        </span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/cflores124568/soccer-analysis" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fa-brands fa-github"></i>
-                            View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Get in touch with Christopher</h2>
-        <div class="contact-grid">
-            <div class="contact-card">
-                <a href="mailto:chrisefff@gmail.com">
-                    <h3>Email</h3>
-                    <i class="fa-solid fa-envelope fa-2xl"></i>
-                </a>
-            </div>
-            <div class="contact-card">
-                <a href="https://linkedin.com/in/christopher-flores-b10639374" target="_blank" rel="noopener noreferrer">
-                    <h3>Linkedin</h3>
-                    <i class="fa-brands fa-linkedin fa-2xl"></i>
-                </a>
-            </div>
-            <div class="contact-card">
-                <a href="https://github.com/cflores124568" target="_blank" rel="noopener noreferrer">
-                    <h3>Github</h3>
-                    <i class="fa-brands fa-github fa-2xl"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <h3>&copy; Copyright 2026. All rights reserved.</h3>
-    </footer>
-
+    <footer><h3>&copy; Copyright 2026. All rights reserved.</h3></footer>
     <script src="animations.js"></script>
-    <script>
-        // Dot grid logic remains separate here if needed, or keep it in animations.js
-    </script>
 </body>
 </html>

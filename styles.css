@@ -1685,3 +1685,340 @@ button:focus-visible,
         transition-duration: 0.01ms !important;
     }
 }
+
+/* ===================================
+   2026 PROJECT REDESIGN
+   The hero and interactive dot field intentionally keep their existing design.
+   =================================== */
+
+.about-card-redesign {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: end;
+    max-width: 1180px;
+    background:
+        linear-gradient(110deg, rgba(121, 242, 192, 0.055), transparent 38%),
+        rgba(8, 9, 14, 0.78);
+}
+
+.about-card-redesign .about-focus {
+    grid-column: auto;
+    display: grid;
+    gap: 0;
+    align-self: stretch;
+    border-top: 1px solid rgba(121, 242, 192, 0.32);
+}
+
+.about-card-redesign .about-focus span {
+    display: flex;
+    align-items: center;
+    min-height: 3.4rem;
+    padding: 0.65rem 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(246, 247, 251, 0.78);
+}
+
+#projects.work-section {
+    padding: clamp(5rem, 9vw, 8rem) clamp(1rem, 4vw, 3rem);
+}
+
+.work-heading,
+.work-list {
+    width: min(100%, 1480px);
+    margin-inline: auto;
+}
+
+.work-heading {
+    margin-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+#projects .work-heading h2 {
+    margin: 0 0 1rem;
+    text-align: left;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: -0.055em;
+}
+
+.work-heading p {
+    max-width: 66ch;
+    margin: 0;
+    color: rgba(246, 247, 251, 0.7);
+    font-family: "Intel One Mono", monospace;
+    font-size: clamp(0.95rem, 1.35vw, 1.08rem);
+    line-height: 1.7;
+}
+
+.work-list {
+    display: grid;
+    gap: clamp(4.5rem, 9vw, 8.5rem);
+}
+
+.work-project {
+    position: relative;
+    min-height: clamp(680px, 72vw, 920px);
+    border: 1px solid rgba(121, 242, 192, 0.2);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(255, 77, 154, 0.075), transparent 24rem),
+        rgba(5, 6, 10, 0.84);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+    transition: border-color 260ms ease, transform 260ms ease, box-shadow 260ms ease;
+}
+
+.work-project::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(18vw, 260px);
+    height: min(18vw, 260px);
+    pointer-events: none;
+    opacity: 0.2;
+    background-image: radial-gradient(circle, #ff4d9a 1px, transparent 1.2px);
+    background-size: 7px 7px;
+    mask-image: linear-gradient(225deg, #000, transparent 72%);
+}
+
+.work-project:hover {
+    transform: translateY(-4px);
+    border-color: rgba(121, 242, 192, 0.52);
+    box-shadow: 0 36px 100px rgba(20, 8, 42, 0.46);
+}
+
+.work-project-link {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-height: inherit;
+    padding: clamp(1.25rem, 3.2vw, 3rem);
+    color: inherit;
+    text-decoration: none;
+}
+
+.work-project-link:focus-visible {
+    outline: 2px solid #79f2c0;
+    outline-offset: 7px;
+}
+
+.work-project-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: end;
+    margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+    border: 0;
+    background: transparent;
+}
+
+.work-label {
+    display: block;
+    margin-bottom: 0.65rem;
+    color: #79f2c0;
+    font-family: "Intel One Mono", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
+
+.work-project h3 {
+    margin: 0;
+    color: #f6f7fb;
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+}
+
+.work-project-header p {
+    max-width: 66ch;
+    margin: 0.9rem 0 0.8rem;
+    color: rgba(246, 247, 251, 0.74);
+    font-family: "Intel One Mono", monospace;
+    font-size: clamp(0.9rem, 1.25vw, 1.02rem);
+    line-height: 1.55;
+}
+
+.work-stack {
+    color: rgba(121, 242, 192, 0.8);
+    font-family: "Intel One Mono", monospace;
+    font-size: clamp(0.72rem, 1vw, 0.84rem);
+    line-height: 1.6;
+}
+
+.work-project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid currentColor;
+    color: #ff7ab8;
+    font-family: "Intel One Mono", monospace;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: color 220ms ease, transform 220ms ease;
+}
+
+.work-project:hover .work-project-cta {
+    color: #79f2c0;
+    transform: translateX(4px);
+}
+
+.work-gallery {
+    display: grid;
+    gap: clamp(0.8rem, 1.5vw, 1.3rem);
+    min-height: clamp(460px, 43vw, 650px);
+}
+
+.work-gallery figure {
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 0.65rem;
+}
+
+.work-gallery img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    background: #080a0f;
+    transition: border-color 260ms ease, filter 260ms ease;
+}
+
+.work-project:hover .work-gallery img {
+    border-color: rgba(121, 242, 192, 0.34);
+    filter: brightness(1.035);
+}
+
+.work-gallery figcaption {
+    color: rgba(246, 247, 251, 0.62);
+    font-family: "Intel One Mono", monospace;
+    font-size: 0.76rem;
+    line-height: 1.4;
+}
+
+.work-gallery-landscape {
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.95fr);
+}
+
+.work-gallery-support {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.8rem, 1.5vw, 1.3rem);
+    min-width: 0;
+    min-height: 0;
+}
+
+.work-gallery-phone img {
+    object-fit: contain;
+}
+
+.work-gallery-editorial {
+    grid-template-columns: minmax(200px, 0.85fr) minmax(360px, 1.45fr) minmax(200px, 0.85fr);
+}
+
+.work-gallery-editorial figure:first-child img {
+    object-position: 20% center;
+}
+
+.work-gallery-mobile {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.work-gallery-mobile img {
+    object-fit: contain;
+    padding: clamp(0.75rem, 2vw, 1.75rem);
+    box-sizing: border-box;
+    background: linear-gradient(145deg, #0a0b11, #181226);
+}
+
+body.animations-ready .work-project,
+body.animations-ready .work-heading {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 650ms ease, transform 650ms ease, border-color 260ms ease, box-shadow 260ms ease;
+}
+
+body.animations-ready .work-project.fade-in-visible,
+body.animations-ready .work-heading.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.animations-ready #projects .work-heading h2 {
+    opacity: 1;
+    transform: none;
+}
+
+body.animations-ready .work-project.fade-in-visible:hover {
+    transform: translateY(-4px);
+}
+
+@media (max-width: 980px) {
+    .about-card-redesign {
+        grid-template-columns: 1fr;
+    }
+
+    .work-project {
+        min-height: auto;
+    }
+
+    .work-gallery-landscape,
+    .work-gallery-editorial {
+        grid-template-columns: 1fr;
+    }
+
+    .work-gallery,
+    .work-gallery-support {
+        min-height: auto;
+    }
+
+    .work-gallery figure,
+    .work-gallery-support figure {
+        min-height: 0;
+    }
+
+    .work-gallery img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .work-gallery-mobile {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .work-gallery-mobile img {
+        aspect-ratio: 9 / 16;
+    }
+}
+
+@media (max-width: 680px) {
+    .work-project-header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .work-project-cta {
+        justify-self: start;
+    }
+
+    .work-gallery-mobile {
+        grid-template-columns: 1fr;
+    }
+
+    .work-gallery-mobile img {
+        max-height: 620px;
+    }
+
+    .work-project::after {
+        width: 150px;
+        height: 150px;
+    }
+}

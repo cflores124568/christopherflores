@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
   
   // Observe elements
-  document.querySelectorAll('.project-card, .contact-card, .skills-group, .about-card, #projects h2, #contact h2, .projects-intro').forEach(element => {
+  document.querySelectorAll('.work-project, .work-heading, .contact-card, .skills-group, .about-card, #contact h2').forEach(element => {
     fadeInObserver.observe(element);
   });
 
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // PERFORMANCE: REDUCE MOTION FOR ACCESSIBILITY
 // ===================================
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.querySelectorAll('.project-card, .contact-card').forEach(el => el.style.transition = 'none');
+  document.querySelectorAll('.work-project, .contact-card').forEach(el => el.style.transition = 'none');
 }
 
 // ===================================
@@ -202,85 +202,3 @@ function updateDots() {
     requestAnimationFrame(updateDots);
 }
 updateDots();
-
-// ===================================
-// PROJECT SLIDER LOGIC
-// ===================================
-const projectSlideIndices = {};
-
-document.addEventListener('DOMContentLoaded', () => {
-    const projects = document.querySelectorAll('[data-project]');
-
-    projects.forEach((project) => {
-        const projectId = project.getAttribute('data-project');
-        projectSlideIndices[projectId] = 0;
-
-        const slides = project.querySelectorAll('.project-image, .project-video');
-        const dotsContainer = project.querySelector('.slider-dots');
-        let counter = project.querySelector('.slider-counter');
-
-        if (!counter && slides.length > 1) {
-            counter = document.createElement('span');
-            counter.className = 'slider-counter';
-            project.appendChild(counter);
-        }
-
-        if (dotsContainer) dotsContainer.innerHTML = '';
-
-        slides.forEach((_, index) => {
-            if (!dotsContainer) return;
-            const dot = document.createElement('span');
-            dot.className = 'dot';
-            dot.setAttribute('role', 'button');
-            dot.setAttribute('tabindex', '0');
-            dot.setAttribute('aria-label', `Show slide ${index + 1}`);
-            dot.addEventListener('click', () => showSlide(projectId, index));
-            dot.addEventListener('keydown', (event) => {
-                if (event.key !== 'Enter' && event.key !== ' ') return;
-                event.preventDefault();
-                showSlide(projectId, index);
-            });
-            dotsContainer.appendChild(dot);
-        });
-
-        const prevBtn = project.querySelector('.slider-button.prev');
-        const nextBtn = project.querySelector('.slider-button.next');
-
-        if (prevBtn) prevBtn.addEventListener('click', () => changeSlide(projectId, -1));
-        if (nextBtn) nextBtn.addEventListener('click', () => changeSlide(projectId, 1));
-
-        project.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowLeft') changeSlide(projectId, -1);
-            if (event.key === 'ArrowRight') changeSlide(projectId, 1);
-        });
-
-        showSlide(projectId, 0);
-    });
-});
-
-function changeSlide(projectId, n) {
-    showSlide(projectId, projectSlideIndices[projectId] + n);
-}
-
-function showSlide(projectId, n) {
-    const projectContainer = document.querySelector(`[data-project="${projectId}"]`);
-    if (!projectContainer) return;
-
-    const slides = projectContainer.querySelectorAll('.project-image, .project-video');
-    const dots = projectContainer.querySelectorAll('.dot');
-    const counter = projectContainer.querySelector('.slider-counter');
-
-    if (n >= slides.length) n = 0;
-    if (n < 0) n = slides.length - 1;
-    projectSlideIndices[projectId] = n;
-
-    slides.forEach((slide) => slide.classList.remove('active'));
-    dots.forEach((dot) => dot.classList.remove('active'));
-
-    slides.forEach((slide) => { if (slide.tagName === 'VIDEO') slide.pause(); });
-
-    const currentSlide = slides[n];
-    if (currentSlide) currentSlide.classList.add('active');
-    if (dots[n]) dots[n].classList.add('active');
-    if (counter) counter.textContent = `${n + 1}/${slides.length}`;
-}

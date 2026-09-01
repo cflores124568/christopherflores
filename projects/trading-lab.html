@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Trading Lab case study by Christopher Flores.">
+    <title>Trading Lab | Christopher Flores</title>
+    <link rel="stylesheet" href="../styles.css?v=4">
+    <link rel="stylesheet" href="../case-study.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@400;500;600&amp;family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
+</head>
+<body class="case-body">
+    <nav class="case-nav" aria-label="Project navigation"><a href="../index.html#projects">← Back to work</a><span class="case-nav-brand">Christopher Flores</span></nav>
+    <main class="case-main">
+        <section class="case-hero">
+            <div class="case-title-wrap"><h1 class="case-title">Trading Lab</h1><p class="case-lede">Futures backtesting and replay under real prop firm constraints.</p></div>
+            <dl class="case-meta"><div><dt>Role</dt><dd>Product engineering and systems design</dd></div><div><dt>Status</dt><dd>Private build, active development</dd></div><div><dt>Stack</dt><dd>Python, FastAPI, SolidJS, C++17, PostgreSQL, TimescaleDB</dd></div></dl>
+            <figure class="case-hero-media"><img src="../images/TradingLab_2.webp" alt="Trading Lab replay workspace with chart overlays and trade controls"><figcaption>Replay and execution workflow</figcaption></figure>
+        </section>
+        <section class="case-section"><h2>The system</h2><div class="case-copy"><p>Trading Lab is built to evaluate discretionary and systematic futures strategies against the constraints traders actually face in prop firm accounts.</p><p>The application joins a FastAPI backend and SolidJS interface with a C++17 simulation engine exposed through pybind11. Historical market data moves from Databento into parquet and PostgreSQL with TimescaleDB for faster replay and backtest workflows.</p><ul><li>Rule presets model drawdown and account constraints.</li><li>Replay keeps chart study and execution in one workflow.</li><li>The compiled engine handles simulation-heavy work.</li><li>The data pipeline reduces repeated historical sync costs.</li></ul></div></section>
+        <section class="case-section"><h2>Core workflows</h2><div class="case-gallery"><figure><img src="../images/TradingLab_1.webp" alt="Trading Lab session setup and ruleset configuration"><figcaption>Session setup and ruleset launch</figcaption></figure><figure><img src="../images/TradingLab_3.webp" alt="Trading Lab backtest calendar with daily profit and drawdown"><figcaption>Backtest calendar and drawdown review</figcaption></figure></div></section>
+        <div class="case-next"><span>Next project</span><a href="electritrack.html">ElectriTrack ↗</a></div>
+    </main>
+</body>
+</html>
