@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Mycrogrid Platform development case study: a homeowner mobile app and staff command center built around a shared TypeScript data model, telemetry freshness, and alert workflows. Prototype uses sample equipment data; manufacturer integrations are pending.">
     <title>Mycrogrid Platform | Christopher Flores</title>
-    <link rel="stylesheet" href="../styles.css?v=8">
-    <link rel="stylesheet" href="../case-study.css?v=5">
+    <link rel="stylesheet" href="../styles.css?v=9">
+    <link rel="stylesheet" href="../case-study.css?v=6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@400;500;600&amp;family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
             </div>
         </section>
 
-        <section class="case-section">
+        <section class="case-section" id="implemented-workflows">
             <h2>Implemented workflows</h2>
             <div class="case-copy">
                 <p>The homeowner prototype covers power flow, energy history, equipment details, messages, and multiple properties. The staff prototype covers fleet views, telemetry, alert triage, installation stages, and service records.</p>
@@ -60,13 +60,12 @@
                     <li><strong>Alert triage.</strong> Acknowledge, assign, snooze, resolve, and reopen alerts with an activity history in the mock client.</li>
                     <li><strong>Service context.</strong> Installation stages, visits, and warranty cases alongside equipment and telemetry.</li>
                 </ul>
+                <p>Captured directly from the running iOS simulator: Home shows current power flow, Energy compares production and consumption over time, and System details breaks down battery capacity and equipment readings. All readings are sample data; manufacturer connections and production deployment are still in development.</p>
             </div>
             <div class="case-gallery case-platform-gallery">
-                <figure class="case-gallery-mobile"><img src="../images/mycrogrid-platform-mobile.jpg" alt="Mycroguard homeowner app web preview showing sample power flow and battery readings" width="430" height="1000" loading="lazy"><figcaption>Implemented React Native interface shown in its web preview. Equipment readings are sample data.</figcaption></figure>
-                <div class="case-copy">
-                    <p>The mobile screen explains where energy is coming from and where it is going. The staff screen puts that same installation in the context of open issues and the wider fleet.</p>
-                    <p>These screenshots show the running prototypes. Neither demonstrates a live manufacturer connection or production deployment.</p>
-                </div>
+                <figure class="case-gallery-mobile"><a href="../images/mycrogrid-platform-home-ios.png" target="_blank" rel="noopener" aria-label="Open full-size Home screenshot"><img src="../images/mycrogrid-platform-home-ios.png" alt="Mycrogrid native iOS Home screen with the latest house visualization and sample solar and grid readings" width="1206" height="2622" loading="lazy"></a><figcaption>Home · Current power flow</figcaption></figure>
+                <figure class="case-gallery-mobile"><a href="../images/mycrogrid-platform-energy-ios.png" target="_blank" rel="noopener" aria-label="Open full-size Energy screenshot"><img src="../images/mycrogrid-platform-energy-ios.png" alt="Mycrogrid native iOS Energy screen comparing weekly solar production and home consumption using sample data" width="1206" height="2622" loading="lazy"></a><figcaption>Energy · Weekly production and consumption</figcaption></figure>
+                <figure class="case-gallery-mobile"><a href="../images/mycrogrid-platform-system-ios.png" target="_blank" rel="noopener" aria-label="Open full-size System details screenshot"><img src="../images/mycrogrid-platform-system-ios.png" alt="Mycrogrid native iOS System details screen showing sample battery capacity, reserve, and energy system readings" width="1206" height="2622" loading="lazy"></a><figcaption>System details · Battery and equipment readings</figcaption></figure>
             </div>
         </section>
 
