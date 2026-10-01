@@ -243,6 +243,17 @@
     background: linear-gradient(145deg, #090a0e, #171122);
 }
 
+.case-platform-gallery {
+    grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1fr);
+    align-items: center;
+}
+
+.case-platform-gallery .case-gallery-mobile img {
+    height: auto;
+    min-height: 0;
+    max-height: 680px;
+}
+
 .case-actions {
     display: flex;
     flex-wrap: wrap;

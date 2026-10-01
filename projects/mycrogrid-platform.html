@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Mycrogrid Platform development case study: a homeowner mobile app and staff command center built around a shared TypeScript data model, telemetry freshness, and alert workflows. Prototype uses sample equipment data; manufacturer integrations are pending.">
+    <title>Mycrogrid Platform | Christopher Flores</title>
+    <link rel="stylesheet" href="../styles.css?v=8">
+    <link rel="stylesheet" href="../case-study.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@400;500;600&amp;family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet">
+</head>
+<body class="case-body">
+    <nav class="case-nav" aria-label="Project navigation"><a href="../index.html#mycrogrid-platform">← Back to work</a><span class="case-nav-brand">Christopher Flores</span></nav>
+    <main class="case-main">
+        <section class="case-hero">
+            <div class="case-title-wrap">
+                <span class="work-label">In development / Energy monitoring</span>
+                <h1 class="case-title">Mycrogrid Platform</h1>
+                <p class="case-lede">One view of a home's energy system. A different view for the team responsible for the whole fleet.</p>
+            </div>
+            <dl class="case-meta">
+                <div><dt>Role</dt><dd>Web and mobile implementation, shared data model, and monitoring workflows</dd></div>
+                <div><dt>Status</dt><dd>Working prototype with sample equipment data. Live manufacturer integrations pending.</dd></div>
+                <div><dt>Stack</dt><dd>TypeScript, React, React Native, Expo, MapLibre. Proposed PostgreSQL schema.</dd></div>
+            </dl>
+            <figure class="case-hero-media"><img src="../images/mycrogrid-platform-command-center.jpg" alt="Mycrogrid Command Center prototype overview with open alerts, fleet status, and sample weather scenarios" width="1440" height="1000"><figcaption>Implemented staff command center, running locally with sample data. Figures shown are demo fixtures.</figcaption></figure>
+        </section>
+
+        <section class="case-section">
+            <h2>The problem</h2>
+            <div class="case-copy">
+                <p>A home can combine solar equipment, a battery, and a gateway from different manufacturers. Homeowners need to understand what their system is doing; staff need to identify which installations require attention.</p>
+                <p>The platform pairs the Mycroguard homeowner app with an internal command center. Both use the same vocabulary for energy flows, equipment status, and reporting quality, while presenting different workflows.</p>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Architecture</h2>
+            <div class="case-copy">
+                <p>A shared TypeScript package defines the canonical data model, API contract, normalization helpers, and freshness rules. React and React Native screens read through that contract rather than interpreting manufacturer payloads themselves.</p>
+                <p>Today, an in-memory client supplies sample installations and simulated telemetry. Provider-specific mappings sit behind a connector interface; the production backend and live equipment access remain future work.</p>
+                <ul>
+                    <li><strong>Canonical values.</strong> Units, signed power flows, and missing values are handled before readings reach the interface.</li>
+                    <li><strong>Multiple connections.</strong> Manufacturer belongs to an equipment connection, allowing one installation to combine providers.</li>
+                    <li><strong>Field precedence.</strong> A connection's authoritative fields determine which reading wins when providers overlap.</li>
+                    <li><strong>Explicit uncertainty.</strong> Proposed provider mappings and database migrations remain labeled as provisional.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Implemented workflows</h2>
+            <div class="case-copy">
+                <p>The homeowner prototype covers power flow, energy history, equipment details, messages, and multiple properties. The staff prototype covers fleet views, telemetry, alert triage, installation stages, and service records.</p>
+                <ul>
+                    <li><strong>Home energy.</strong> Solar, home consumption, battery charge, and grid exchange share one system view.</li>
+                    <li><strong>Fleet monitoring.</strong> Searchable map and list views, URL-based filters, and CSV export over sample installations.</li>
+                    <li><strong>Alert triage.</strong> Acknowledge, assign, snooze, resolve, and reopen alerts with an activity history in the mock client.</li>
+                    <li><strong>Service context.</strong> Installation stages, visits, and warranty cases alongside equipment and telemetry.</li>
+                </ul>
+            </div>
+            <div class="case-gallery case-platform-gallery">
+                <figure class="case-gallery-mobile"><img src="../images/mycrogrid-platform-mobile.jpg" alt="Mycroguard homeowner app web preview showing sample power flow and battery readings" width="430" height="1000" loading="lazy"><figcaption>Implemented React Native interface shown in its web preview. Equipment readings are sample data.</figcaption></figure>
+                <div class="case-copy">
+                    <p>The mobile screen explains where energy is coming from and where it is going. The staff screen puts that same installation in the context of open issues and the wider fleet.</p>
+                    <p>These screenshots show the running prototypes. Neither demonstrates a live manufacturer connection or production deployment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Reliability decisions</h2>
+            <div class="case-copy">
+                <p>A stale reading can look plausible long after a system stops reporting. Measurement age and connection health therefore contribute to the displayed data quality, with missing readings distinguished from a legitimate zero.</p>
+                <p>When a refresh fails, the interface preserves the last successful readings, their original timestamps, and a saved-data warning. Demo controls exercise outages, delayed reports, missing values, and interrupted requests without contacting equipment.</p>
+                <p>Monitoring is read-only toward equipment. Alert actions update the prototype's operational record; they do not change battery settings or send commands to a manufacturer.</p>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>What's next</h2>
+            <div class="case-copy">
+                <p>The current build establishes the interfaces and shared contract. Production work still needs to connect and validate the data behind them.</p>
+                <ul>
+                    <li>Validate manufacturer mappings against authorized sandbox responses and actual equipment topology.</li>
+                    <li>Implement the authenticated backend, persistent storage, and server-enforced staff and customer access.</li>
+                    <li>Confirm polling intervals and freshness thresholds against provider limits.</li>
+                    <li>Deploy the notification worker and validate native remote push delivery.</li>
+                </ul>
+            </div>
+        </section>
+        <div class="case-next"><span>Explore client work</span><a href="../index.html#exaltrio">Exaltrio ↗</a></div>
+    </main>
+</body>
+</html>
