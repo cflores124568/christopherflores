@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="Trading Lab case study by Christopher Flores.">
+    <meta name="description" content="Engineering case study: futures simulation, prop firm evaluation, and historical replay with C++17, pybind11, FastAPI, SolidJS, and TimescaleDB.">
     <title>Trading Lab | Christopher Flores</title>
     <link rel="stylesheet" href="../styles.css?v=6">
     <link rel="stylesheet" href="../case-study.css?v=3">
@@ -15,12 +15,56 @@
     <nav class="case-nav" aria-label="Project navigation"><a href="../index.html#projects">← Back to work</a><span class="case-nav-brand">Christopher Flores</span></nav>
     <main class="case-main">
         <section class="case-hero">
-            <div class="case-title-wrap"><h1 class="case-title">Trading Lab</h1><p class="case-lede">Futures backtesting and replay under real prop firm constraints.</p></div>
-            <dl class="case-meta"><div><dt>Role</dt><dd>Product engineering and systems design</dd></div><div><dt>Status</dt><dd>Private build, active development</dd></div><div><dt>Stack</dt><dd>Python, FastAPI, SolidJS, C++17, PostgreSQL, TimescaleDB</dd></div></dl>
+            <div class="case-title-wrap"><h1 class="case-title">Trading Lab</h1><p class="case-lede">A futures backtester and replay tool that evaluates trades against prop firm account rules.</p></div>
+            <dl class="case-meta"><div><dt>Role</dt><dd>Full-stack engineering, simulation kernel, data pipeline, and rule evaluation</dd></div><div><dt>Status</dt><dd>Private build, active development</dd></div><div><dt>Stack</dt><dd>C++17, pybind11, Python, FastAPI, SolidJS, PostgreSQL, TimescaleDB</dd></div></dl>
             <figure class="case-hero-media"><img src="../images/TradingLab_2.webp" alt="Trading Lab replay workspace with chart overlays and trade controls"><figcaption>Replay and execution workflow</figcaption></figure>
         </section>
-        <section class="case-section"><h2>The system</h2><div class="case-copy"><p>Trading Lab is built to evaluate discretionary and systematic futures strategies against the constraints traders actually face in prop firm accounts.</p><p>The application joins a FastAPI backend and SolidJS interface with a C++17 simulation engine exposed through pybind11. Historical market data moves from Databento into parquet and PostgreSQL with TimescaleDB for faster replay and backtest workflows.</p><ul><li>Rule presets model drawdown and account constraints.</li><li>Replay keeps chart study and execution in one workflow.</li><li>The compiled engine handles simulation-heavy work.</li><li>The data pipeline reduces repeated historical sync costs.</li></ul></div></section>
-        <section class="case-section"><h2>Core workflows</h2><div class="case-gallery"><figure><img src="../images/TradingLab_1.webp" alt="Trading Lab session setup and ruleset configuration"><figcaption>Session setup and ruleset launch</figcaption></figure><figure><img src="../images/TradingLab_3.webp" alt="Trading Lab backtest calendar with daily profit and drawdown"><figcaption>Backtest calendar and drawdown review</figcaption></figure></div></section>
+        <section class="case-section">
+            <h2>The real problem</h2>
+            <div class="case-copy">
+                <p>Backtests that report only net P&amp;L miss account failures between entry and exit. A strategy can finish profitable after breaching daily loss or trailing drawdown. Evaluations also depend on profit targets, consistency thresholds, and minimum trading days.</p>
+                <p>I built this after passing evaluations without finding a durable trading edge.</p>
+            </div>
+        </section>
+        <section class="case-section">
+            <h2>Architecture</h2>
+            <div class="case-copy">
+                <p>Databento history is ingested into PostgreSQL/TimescaleDB; <code>time_bucket()</code> aggregates candles before Python prepares indicators and signals. FastAPI coordinates queries, simulation, evaluation, and persistence.</p>
+                <p>pybind11 passes NumPy OHLC and signal arrays into the C++17 loop, which returns trades and equity. Python restores timestamps and scores account rules. SolidJS handles charts, replay controls, and saved-run comparisons.</p>
+            </div>
+        </section>
+        <section class="case-section">
+            <h2>Technical decisions and trade-offs</h2>
+            <div class="case-copy">
+                <ul>
+                    <li><strong>Small native boundary.</strong> Keep DataFrames, metrics, and rules in Python; compile the numerical loop. Faster runs, but an extension to build and maintain.</li>
+                    <li><strong>Shared-memory batches.</strong> Release the GIL and run signal variants in a C++ thread pool over read-only price arrays, avoiding a history copy per trial.</li>
+                    <li><strong>Python reference.</strong> Keep a fallback and test C++/Python trade and equity parity across execution modes. Matching rounding takes priority over aggressive floating-point optimizations.</li>
+                    <li><strong>Explicit fills.</strong> Default to next-bar opens with adverse slippage; synthetic spreads and brackets are opt-in. Persist assumptions with each run. When both bracket levels touch, assume the stop first.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="case-section">
+            <h2>Core workflows</h2>
+            <div class="case-copy">
+                <ul>
+                    <li><strong>Configure.</strong> Select symbol, dates, interval, position size, and an evaluation preset.</li>
+                    <li><strong>Backtest and compare.</strong> Save trades, equity, and rule outcomes; compare two runs.</li>
+                    <li><strong>Replay.</strong> Step through history, place manual trades, and save or resume sessions.</li>
+                </ul>
+            </div>
+            <div class="case-gallery"><figure><img src="../images/TradingLab_1.webp" alt="Trading Lab session setup and ruleset configuration"><figcaption>Session setup and ruleset launch</figcaption></figure><figure><img src="../images/TradingLab_3.webp" alt="Trading Lab backtest calendar with daily profit and drawdown"><figcaption>Backtest calendar and drawdown review</figcaption></figure></div>
+        </section>
+        <section class="case-section">
+            <h2>Current limitations and next work</h2>
+            <div class="case-copy">
+                <ul>
+                    <li>EOD drawdown uses starting account size rather than a full session-close trailing model.</li>
+                    <li>OHLC bars and synthetic quotes cannot reproduce intrabar order sequence or queue position.</li>
+                    <li>Next: reduce Python result materialization and indicator prep costs; add hosted deployment and authentication.</li>
+                </ul>
+            </div>
+        </section>
         <div class="case-next"><span>Next project</span><a href="electritrack.html">ElectriTrack ↗</a></div>
     </main>
 </body>
