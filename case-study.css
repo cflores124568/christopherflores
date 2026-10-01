@@ -180,6 +180,11 @@
     letter-spacing: -0.045em;
 }
 
+/* Galleries span the heading column, so their headings must scroll away first. */
+.case-section:has(> .case-gallery) > h2 {
+    position: static;
+}
+
 .case-copy {
     max-width: 76ch;
 }
