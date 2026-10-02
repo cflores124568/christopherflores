@@ -2261,6 +2261,24 @@ button:focus-visible,
     background: linear-gradient(145deg, #0a0b11, #181226);
 }
 
+/* Framed phone mockups carry their own device edge, so they skip the image box. */
+.work-gallery-phones {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.work-project-secondary .work-gallery-phones {
+    height: clamp(420px, 40vw, 600px);
+}
+
+.work-gallery.work-gallery-phones img {
+    border: 0;
+    background: none;
+}
+
+.work-gallery-phones figcaption {
+    text-align: center;
+}
+
 body.animations-ready .work-project,
 body.animations-ready .work-heading {
     opacity: 1;
@@ -2319,6 +2337,14 @@ body.animations-ready .work-project.fade-in-visible:hover {
     .work-gallery-mobile img {
         aspect-ratio: 9 / 16;
     }
+
+    .work-project-secondary .work-gallery-phones {
+        height: auto;
+    }
+
+    .work-gallery.work-gallery-phones img {
+        aspect-ratio: 1419 / 2796;
+    }
 }
 
 @media (max-width: 680px) {
@@ -2338,6 +2364,10 @@ body.animations-ready .work-project.fade-in-visible:hover {
 
     .work-gallery-mobile img {
         max-height: 620px;
+    }
+
+    .work-gallery-phones {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .work-project::after {
