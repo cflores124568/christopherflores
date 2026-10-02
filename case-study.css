@@ -268,6 +268,53 @@
     outline-offset: 6px;
 }
 
+/* Framed phone mockups ship with transparent backgrounds, so they sit on the stage without a box. */
+.case-phone-stage {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: clamp(0.5rem, 3vw, 3rem);
+    max-height: 760px;
+    padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 6vw, 6rem) 0;
+    overflow: hidden;
+    border: 1px solid rgba(121, 242, 192, 0.28);
+    background: #07080c;
+}
+
+.case-hero-phones .case-phone-stage img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border: 0;
+    background: none;
+}
+
+.case-phone-stage img:nth-child(odd) {
+    margin-top: clamp(2rem, 8vw, 7rem);
+}
+
+.case-phone-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+}
+
+.case-gallery.case-phone-gallery img {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    border: 0;
+    background: none;
+}
+
+.case-phone-gallery a {
+    display: block;
+}
+
+.case-phone-gallery a:focus-visible {
+    outline: 2px solid #79f2c0;
+    outline-offset: 6px;
+}
+
 .case-actions {
     display: flex;
     flex-wrap: wrap;
@@ -340,6 +387,25 @@
 
     .case-gallery .case-gallery-wide {
         grid-column: auto;
+    }
+
+    .case-phone-stage {
+        gap: 0;
+        padding: 1.25rem 0 0;
+    }
+
+    .case-hero-phones .case-phone-stage img {
+        width: 128%;
+        margin-inline: -14%;
+    }
+
+    .case-hero-phones .case-phone-stage img:nth-child(2) {
+        position: relative;
+        z-index: 1;
+    }
+
+    .case-gallery.case-phone-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .case-gallery img {
