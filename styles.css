@@ -1152,50 +1152,92 @@ footer h3{
     gap: 10px;
 }
 
-.featured-skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
-    gap: 14px;
+/* Fanned icon stack: hovering spreads the tiles and lifts the one under the cursor */
+.stack-fan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 0 4px;
+}
+
+.stack-fan-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    --tile: 64px;
+    --overlap: -12px;
+}
+
+.stack-fan-chip {
+    position: relative;
+    z-index: 1;
+    width: var(--tile);
+    height: var(--tile);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background:
+        radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 26%, transparent), transparent 70%),
+        linear-gradient(160deg, #1b1b22, #0b0b0f);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, rgba(255, 255, 255, 0.1));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 10px 22px rgba(0, 0, 0, 0.45);
+    transform: rotate(calc(var(--o) * 1deg));
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stack-fan-chip + .stack-fan-chip {
+    margin-left: var(--overlap);
+}
+
+.stack-fan-chip img {
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Single-color black marks read white on the dark tiles */
+.stack-fan-chip.is-mono img {
+    filter: invert(1);
+}
+
+.stack-fan-list:hover .stack-fan-chip {
+    transform: translate(calc(var(--o) * 4px), -6px) rotate(calc(var(--o) * 2deg));
+}
+
+.stack-fan-list .stack-fan-chip:hover {
+    z-index: 2;
+    transform: translate(calc(var(--o) * 4px), -16px) rotate(calc(var(--o) * 2deg)) scale(1.1);
+    border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 16px 30px rgba(0, 0, 0, 0.5),
+        0 0 24px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.stack-fan-caption {
+    min-height: 1.4em;
+    margin: 16px 0 0;
+    font-family: 'Intel One Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.62);
+    transition: color 0.2s ease;
+}
+
+.stack-fan-caption.is-active {
+    font-weight: 700;
+    color: #ffffff;
 }
 
 .skills-chips.compact {
     gap: 8px;
-}
-
-.featured-skill {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 6px 4px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.featured-skill:hover {
-    transform: translateY(-2px);
-}
-
-.featured-skill-mark {
-    width: 72px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0;
-    background:
-        radial-gradient(circle at 30% 25%, rgba(121, 242, 192, 0.18), transparent 60%),
-        rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
-}
-
-.featured-skill-label {
-    font-family: 'Intel One Mono', monospace;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: rgba(255, 255, 255, 0.9);
 }
 
 .skill-chip {
@@ -1228,34 +1270,16 @@ footer h3{
     flex-shrink: 0;
 }
 
-.featured-skill-icon {
-    width: 38px !important;
-    height: 38px !important;
-}
-
 @media (max-width: 600px) {
     .skills-group {
         padding: 1rem;
     }
-    .featured-skills {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px 8px;
+    .stack-fan-list {
+        --tile: 44px;
+        --overlap: -12px;
     }
-    .featured-skill {
-        gap: 8px;
-        padding: 4px 2px 0;
-    }
-    .featured-skill-mark {
-        width: 60px;
-        height: 60px;
-        border-radius: 0;
-    }
-    .featured-skill-label {
-        font-size: 0.68rem;
-    }
-    .featured-skill-icon {
-        width: 32px !important;
-        height: 32px !important;
+    .stack-fan-caption {
+        font-size: 0.7rem;
     }
     .skills-chips {
         gap: 7px;

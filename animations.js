@@ -125,7 +125,27 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) closeMobileMenu();
   });
-  
+
+  // Swap the stack caption to the hovered tool's name
+  document.querySelectorAll('.stack-fan').forEach((fan) => {
+    const list = fan.querySelector('.stack-fan-list');
+    const caption = fan.querySelector('.stack-fan-caption');
+    if (!list || !caption) return;
+    const defaultText = caption.textContent;
+
+    list.addEventListener('mouseover', (event) => {
+      const chip = event.target.closest('.stack-fan-chip');
+      if (!chip) return;
+      caption.textContent = chip.dataset.name;
+      caption.classList.add('is-active');
+    });
+
+    list.addEventListener('mouseleave', () => {
+      caption.textContent = defaultText;
+      caption.classList.remove('is-active');
+    });
+  });
+
 });
 
 // ===================================
