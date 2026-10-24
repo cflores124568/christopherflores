@@ -1981,17 +1981,14 @@ button:focus-visible,
     height: 3.5rem;
 }
 
-.studio-project-arrow {
-    color: #ff7ab8;
-    font-size: 1.5rem;
-    transition: color 220ms ease, transform 220ms ease;
-}
-
 .studio-project p {
     margin: 0.65rem 0 1.25rem;
 }
 
 .studio-project-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     align-self: flex-start;
     margin-top: auto;
     padding-bottom: 0.3rem;
@@ -2005,11 +2002,6 @@ button:focus-visible,
 .studio-project-link:hover .studio-project-cover {
     border-color: rgba(121, 242, 192, 0.52);
     filter: brightness(1.06);
-}
-
-.studio-project-link:hover .studio-project-arrow {
-    transform: translate(3px, -3px);
-    color: #79f2c0;
 }
 
 .studio-project-link:hover .studio-project-cta {
@@ -2096,6 +2088,22 @@ button:focus-visible,
     color: #79f2c0;
 }
 
+.link-icon {
+    width: 0.85em;
+    height: 0.85em;
+    flex-shrink: 0;
+    vertical-align: -0.1em;
+    transition: transform 220ms ease;
+}
+
+a:hover .link-icon-internal {
+    transform: translateX(3px);
+}
+
+a:hover .link-icon-external {
+    transform: translate(2px, -2px);
+}
+
 .studio-project-link:focus-visible,
 .work-studio .work-project-cta:focus-visible,
 .studio-more a:focus-visible,
@@ -2149,7 +2157,7 @@ button:focus-visible,
 
 @media (prefers-reduced-motion: reduce) {
     .studio-project-cover,
-    .studio-project-arrow,
+    .link-icon,
     .studio-project-cta,
     .studio-more a,
     .work-additional-cta {

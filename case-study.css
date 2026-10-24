@@ -325,6 +325,7 @@
 .case-action {
     display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
     min-height: 44px;
     padding: 0.75rem 1rem;
     border: 1px solid rgba(121, 242, 192, 0.42);
