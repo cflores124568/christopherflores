@@ -1866,13 +1866,17 @@ button:focus-visible,
 }
 
 .work-project-development .work-gallery-platform {
-    grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 0.5fr));
-    height: clamp(320px, 34vw, 440px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: auto;
     min-height: 0;
 }
 
+.work-project-development .work-gallery-platform figure:first-child {
+    grid-column: 1 / -1;
+}
+
 .work-project-development .work-gallery-platform img {
-    height: 100%;
+    height: auto;
     aspect-ratio: auto;
 }
 
@@ -2111,22 +2115,7 @@ a:hover .link-icon-external {
 
 @media (max-width: 680px) {
     .work-project-development .work-gallery-platform {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        height: auto;
-    }
-
-    .work-project-development .work-gallery-platform figure:first-child {
-        grid-column: 1 / -1;
-    }
-
-    .work-project-development .work-gallery-platform img {
-        height: auto;
-        aspect-ratio: 16 / 9;
-    }
-
-    .work-project-development .work-gallery-platform .work-platform-mobile img {
-        aspect-ratio: 1206 / 2622;
-        max-height: 480px;
+        grid-template-columns: 1fr;
     }
 
     .work-studio-header,
