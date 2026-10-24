@@ -1304,17 +1304,6 @@ html {
     scroll-padding-top: 92px;
 }
 
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    z-index: 2000;
-    background: linear-gradient(90deg, #79f2c0, #5db6ff, #ff4d9a);
-    box-shadow: 0 0 18px rgba(121, 242, 192, 0.42);
-}
-
 .navbar {
     backdrop-filter: blur(18px);
 }

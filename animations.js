@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbarMenu = document.getElementById('primary-nav');
   const navLinks = document.querySelectorAll('.navbar-link');
   const mobileMenuIcon = mobileMenuButton ? mobileMenuButton.querySelector('i') : null;
-  const scrollProgress = document.getElementById('scrollProgress');
 
   body.classList.add('animations-ready');
 
@@ -73,12 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function updateScrollUi() {
-    if (scrollProgress) {
-      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-      scrollProgress.style.width = `${Math.min(progress, 100)}%`;
-    }
-
     if (!navbar) return;
 
     if (window.scrollY > 100) {
