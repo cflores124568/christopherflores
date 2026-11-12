@@ -34,16 +34,16 @@
         </nav>
         <div class="hero-content">
             <h4 id="greeting" class="hero-entrance hero-entrance-1">Christopher Flores</h4>
-            <h1 id="name" class="hero-entrance hero-entrance-2">I build trading tools and full-stack applications.</h1>
-            <h3 id="title" class="hero-entrance hero-entrance-3">Backtesting, workflow automation, and business software.</h3>
+            <h1 id="name" class="hero-entrance hero-entrance-2">I build and ship full-stack applications.</h1>
+            <h3 id="title" class="hero-entrance hero-entrance-3">Energy monitoring, business software, and trading tools.</h3>
             <div class="hero-actions hero-entrance hero-entrance-4">
                 <a href="#projects" class="cta-button" aria-label="View Christopher's projects">View Work</a>
                 <a href="#contact" class="secondary-button" aria-label="Contact Christopher">Contact Me</a>
             </div>
             <div class="hero-proof hero-entrance hero-entrance-5" aria-label="Current work and focus areas">
-                <span><strong>Building now</strong> AI-assisted trading workflows and backtesting. The priorities: prop firm constraints, simulation speed, and verifiable results.</span>
+                <span><strong>Shipped</strong> The Mycrogrid app, now on Google Play: a homeowner energy app, web portal, and staff fleet command center on a live Supabase backend.</span>
+                <span><strong>Research</strong> AI-assisted trading workflows and a futures backtester built around prop firm rules, fast simulation, and results I can verify.</span>
                 <span><strong>Product work</strong> Business apps, client projects, and mobile experiences. I focus on the tasks users repeat and the errors that slow them down.</span>
-                <span><strong>Tooling</strong> Internal tools and workflow automation. If a task needs the same manual steps every time, it’s a candidate for a script.</span>
             </div>
             <div class="social-links hero-entrance hero-entrance-6">
                 <a href="https://github.com/cflores124568" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Christopher's GitHub profile"><i class="fa-brands fa-github-alt"></i></a>
@@ -57,12 +57,12 @@
             <div class="about-card about-card-redesign">
                 <div class="about-copy">
                     <span class="section-kicker">About</span>
-                    <h2>Trading software starts with getting the rules right.</h2>
-                    <p>I work on trading tools, business apps, mobile projects, and internal tooling.</p>
-                    <p>My current focus is AI-assisted trading workflows and backtesting, where prop firm rules and simulation runtime shape the implementation. A clean interface doesn’t make up for incorrect results.</p>
+                    <h2>Full-stack engineer at Mycrogrid</h2>
+                    <p>I'm a full-stack engineer at Mycrogrid, Inc., where I built and shipped the company's homeowner energy app, web portal, and staff fleet command center.</p>
+                    <p>Outside that, I build trading research tools, business apps for contractors, and client websites through my studio, Exaltrio.</p>
                 </div>
                 <div class="about-focus" aria-label="Focus areas">
-                    <span>Fintech systems</span>
+                    <span>Energy monitoring</span>
                     <span>Full-stack products</span>
                     <span>Client-facing UX</span>
                     <span>Automation pipelines</span>
@@ -113,14 +113,33 @@
         <section id="projects" class="work-section">
             <div class="work-heading">
                 <h2>Featured Work</h2>
-                <p>Futures research, business software, and energy monitoring. Explore the systems, workflows, and engineering decisions behind my work.</p>
+                <p>Energy monitoring, business software, and futures research. Explore the systems, workflows, and engineering decisions behind my work.</p>
             </div>
             <div class="work-list">
+                <article class="work-project work-project-development" id="mycrogrid-platform">
+                    <a class="work-project-link" href="projects/mycrogrid-platform.html" aria-label="View the Mycrogrid Platform development case study">
+                        <header class="work-project-header">
+                            <div>
+                                <span class="work-label">Flagship / Shipped on Google Play</span>
+                                <h3>Mycrogrid Platform</h3>
+                                <p>A homeowner app released on Google Play, its web portal, and a staff fleet command center, all on one TypeScript data model. Live FranklinWH integration behind a Supabase backend with row-level security and daily energy history.</p>
+                                <span class="work-stack">TypeScript / React Native / Expo / React / Supabase / PostgreSQL</span>
+                            </div>
+                            <span class="work-project-cta">Explore the build <svg class="link-icon link-icon-internal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span>
+                        </header>
+                        <div class="work-gallery work-gallery-platform">
+                            <figure><img src="images/mycrogrid-platform-home-web.png" alt="Mycrogrid customer portal Home screen with a house visualization, current power flow, and sample battery status" width="2932" height="1538" loading="lazy" decoding="async"><figcaption>Home · Current power flow</figcaption></figure>
+                            <figure><img src="images/mycrogrid-platform-energy-web.png" alt="Mycrogrid customer portal Energy screen showing daily production, home consumption, and solar allocation using sample data" width="2923" height="1526" loading="lazy" decoding="async"><figcaption>Energy · Daily production and solar allocation</figcaption></figure>
+                            <figure><img src="images/mycrogrid-platform-equipment-web.png" alt="Mycrogrid customer portal battery viewer showing the FranklinWH aPower 2 finish and light strip, specifications, and a sample installed unit" width="2940" height="1521" loading="lazy" decoding="async"><figcaption>Equipment · Battery details</figcaption></figure>
+                        </div>
+                    </a>
+                </article>
+
                 <article class="work-project work-project-featured">
                     <a class="work-project-link" href="projects/trading-lab.html" aria-label="View the Trading Lab case study">
                         <header class="work-project-header">
                             <div>
-                                <span class="work-label">Flagship / Trading systems</span>
+                                <span class="work-label">Research / Trading systems</span>
                                 <h3>Trading Lab</h3>
                                 <p>A futures backtesting and replay platform for evaluating strategies under real prop firm constraints. A C++17 simulation engine connects historical market data, account-rule evaluation, and interactive replay.</p>
                                 <span class="work-stack">Python / FastAPI / SolidJS / C++17 / PostgreSQL / TimescaleDB</span>
@@ -148,25 +167,6 @@
                             <figure><img src="images/electritrack-mobile-panel-schedule.webp" alt="ElectriTrack iOS panel schedule with labeled breakers and AFCI and GFCI tags" width="1419" height="2796" loading="lazy" decoding="async"><figcaption>iOS app · Panel schedule</figcaption></figure>
                             <figure><img src="images/electritrack-mobile-estimates.webp" alt="ElectriTrack iOS estimates list with pipeline and approved value" width="1419" height="2796" loading="lazy" decoding="async"><figcaption>iOS app · Estimates</figcaption></figure>
                             <figure><img src="images/electritrack-mobile-invoices.webp" alt="ElectriTrack iOS invoices list with collected and outstanding totals" width="1419" height="2796" loading="lazy" decoding="async"><figcaption>iOS app · Invoices</figcaption></figure>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="work-project work-project-development" id="mycrogrid-platform">
-                    <a class="work-project-link" href="projects/mycrogrid-platform.html" aria-label="View the Mycrogrid Platform development case study">
-                        <header class="work-project-header">
-                            <div>
-                                <span class="work-label">Shipped / Energy monitoring</span>
-                                <h3>Mycrogrid Platform</h3>
-                                <p>A homeowner app released on Google Play, its web portal, and a staff fleet command center, all on one TypeScript data model. Live FranklinWH integration behind a Supabase backend with row-level security and daily energy history.</p>
-                                <span class="work-stack">TypeScript / React Native / Expo / React / Supabase / PostgreSQL</span>
-                            </div>
-                            <span class="work-project-cta">Explore the build <svg class="link-icon link-icon-internal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 6 6 6-6 6"/></svg></span>
-                        </header>
-                        <div class="work-gallery work-gallery-platform">
-                            <figure><img src="images/mycrogrid-platform-home-web.png" alt="Mycrogrid customer portal Home screen with a house visualization, current power flow, and sample battery status" width="2932" height="1538" loading="lazy" decoding="async"><figcaption>Home · Current power flow</figcaption></figure>
-                            <figure><img src="images/mycrogrid-platform-energy-web.png" alt="Mycrogrid customer portal Energy screen showing daily production, home consumption, and solar allocation using sample data" width="2923" height="1526" loading="lazy" decoding="async"><figcaption>Energy · Daily production and solar allocation</figcaption></figure>
-                            <figure><img src="images/mycrogrid-platform-equipment-web.png" alt="Mycrogrid customer portal battery viewer showing the FranklinWH aPower 2 finish and light strip, specifications, and a sample installed unit" width="2940" height="1521" loading="lazy" decoding="async"><figcaption>Equipment · Battery details</figcaption></figure>
                         </div>
                     </a>
                 </article>
