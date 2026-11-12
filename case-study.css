@@ -104,6 +104,48 @@
     line-height: 1.65;
 }
 
+/* Store badge and live demo. The badge PNG carries Google's required clear
+   space as transparent padding, so the negative margin aligns its visible
+   edge with the lede. */
+.case-store {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    margin-top: 1.4rem;
+}
+
+.case-store-badge {
+    margin-left: -10px;
+}
+
+.case-store-badge img {
+    display: block;
+    width: auto;
+    height: 64px;
+}
+
+.case-store-demo {
+    color: #ff7ab8;
+    font-family: "Intel One Mono", monospace;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 122, 184, 0.35);
+}
+
+.case-store-demo:hover,
+.case-store-demo:focus-visible {
+    border-bottom-color: #ff7ab8;
+}
+
+.case-store-legal {
+    flex-basis: 100%;
+    margin: 0;
+    color: rgba(246, 247, 251, 0.45);
+    font-family: "Intel One Mono", monospace;
+    font-size: 0.72rem;
+}
+
 .case-meta {
     display: grid;
     grid-template-columns: 1.1fr 1fr 1.5fr;
